@@ -63,6 +63,16 @@ namespace PokerMachine.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap cardback {
+            get {
+                object obj = ResourceManager.GetObject("cardback", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap chip1 {
             get {
                 object obj = ResourceManager.GetObject("chip1", resourceCulture);
