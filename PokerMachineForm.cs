@@ -217,7 +217,7 @@ namespace PokerMachine
             }
             else
             {
-                button.BackColor = SystemColors.Control; // Reset to default
+                button.BackColor = Color.DarkGray;
                 button.Text = "Hold";
             }
         }
@@ -332,10 +332,10 @@ namespace PokerMachine
             }
         }
 
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 
 
