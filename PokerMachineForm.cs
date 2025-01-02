@@ -121,4 +121,19 @@ namespace PokerMachine
             UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
         }
     }
-}
+
+    private void UpdateHoldButtonAppearance(Button button, bool isHeld)
+        {
+            if (isHeld)
+            {
+                button.BackColor = Color.LightGreen; // Highlight if held
+                button.Text = "Held";
+            }
+            else
+            {
+                button.BackColor = SystemColors.Control; // Reset to default
+                button.Text = "Hold";
+            }
+        }
+
+    }
