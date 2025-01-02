@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            numericUpDownBet = new NumericUpDown();
             pictureBox10 = new PictureBox();
             pictureBox9 = new PictureBox();
             pictureBox8 = new PictureBox();
@@ -39,7 +40,6 @@
             lblResult = new Label();
             lblBalance = new Label();
             lblBet = new Label();
-            btnBet = new Button();
             btnDeal = new Button();
             panel2 = new Panel();
             pictureBox5 = new PictureBox();
@@ -55,6 +55,7 @@
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownBet).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
@@ -72,6 +73,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(numericUpDownBet);
             panel1.Controls.Add(pictureBox10);
             panel1.Controls.Add(pictureBox9);
             panel1.Controls.Add(pictureBox8);
@@ -82,7 +84,6 @@
             panel1.Controls.Add(lblResult);
             panel1.Controls.Add(lblBalance);
             panel1.Controls.Add(lblBet);
-            panel1.Controls.Add(btnBet);
             panel1.Controls.Add(btnDeal);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(statusStrip1);
@@ -91,6 +92,19 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(930, 621);
             panel1.TabIndex = 0;
+            // 
+            // numericUpDownBet
+            // 
+            numericUpDownBet.BackColor = SystemColors.Info;
+            numericUpDownBet.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            numericUpDownBet.Location = new Point(249, 533);
+            numericUpDownBet.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
+            numericUpDownBet.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownBet.Name = "numericUpDownBet";
+            numericUpDownBet.Size = new Size(44, 29);
+            numericUpDownBet.TabIndex = 19;
+            numericUpDownBet.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            numericUpDownBet.ValueChanged += numericUpDown1_ValueChanged;
             // 
             // pictureBox10
             // 
@@ -194,23 +208,11 @@
             lblBet.AutoSize = true;
             lblBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBet.ForeColor = Color.DarkGray;
-            lblBet.Location = new Point(255, 485);
+            lblBet.Location = new Point(215, 506);
             lblBet.Name = "lblBet";
             lblBet.Size = new Size(40, 17);
             lblBet.TabIndex = 9;
             lblBet.Text = "Bet : ";
-            // 
-            // btnBet
-            // 
-            btnBet.BackColor = Color.SaddleBrown;
-            btnBet.FlatStyle = FlatStyle.Popup;
-            btnBet.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBet.Location = new Point(235, 511);
-            btnBet.Name = "btnBet";
-            btnBet.Size = new Size(75, 28);
-            btnBet.TabIndex = 8;
-            btnBet.Text = "Bet";
-            btnBet.UseVisualStyleBackColor = false;
             // 
             // btnDeal
             // 
@@ -391,6 +393,7 @@
             Text = "Poker Machine";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)numericUpDownBet).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
@@ -424,7 +427,6 @@
         private Button btnHold4;
         private Button btnHold3;
         private Button btnHold2;
-        private Button btnBet;
         private Label lblBet;
         private Label lblBalance;
         private Label lblResult;
@@ -435,5 +437,6 @@
         private PictureBox pictureBox9;
         private PictureBox pictureBox8;
         private PictureBox pictureBox10;
+        private NumericUpDown numericUpDownBet;
     }
 }

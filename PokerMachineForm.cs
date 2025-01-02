@@ -324,8 +324,8 @@ namespace PokerMachine
         {
             using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
                 this.ClientRectangle,
-                Color.DarkGoldenrod,  // Top color
-                Color.DarkRed,        // Bottom color
+                Color.Gray,  // Top color
+                Color.Black,        // Bottom color
                 LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
@@ -335,6 +335,12 @@ namespace PokerMachine
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            currentBet = (int)numericUpDownBet.Value;
+            lblBet.Text = $"Bet: ${currentBet}";
         }
     }
 
