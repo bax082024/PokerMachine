@@ -46,6 +46,7 @@
             pictureBox1 = new PictureBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            lblResult = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -59,6 +60,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lblResult);
             panel1.Controls.Add(lblBalance);
             panel1.Controls.Add(lblBet);
             panel1.Controls.Add(btnBet);
@@ -265,6 +267,16 @@
             toolStripStatusLabel1.Size = new Size(74, 17);
             toolStripStatusLabel1.Text = "Bax Creation";
             // 
+            // lblResult
+            // 
+            lblResult.AutoSize = true;
+            lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblResult.Location = new Point(402, 132);
+            lblResult.Name = "lblResult";
+            lblResult.Size = new Size(27, 30);
+            lblResult.TabIndex = 11;
+            lblResult.Text = "``";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -308,5 +320,6 @@
         private Button btnBet;
         private Label lblBet;
         private Label lblBalance;
+        private Label lblResult;
     }
 }

@@ -43,20 +43,33 @@ namespace PokerMachine
         {
             if (balance >= currentBet)
             {
+                // Deduct the current bet from the balance
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
-                // Deal cards
+                // Create a new deck and shuffle
                 Deck deck = new Deck();
                 deck.Shuffle();
+
+                // Deal 5 cards
                 List<Card> hand = DealCards(deck);
+
+                // Display the dealt cards in the PictureBoxes
                 DisplayHand(hand);
+
+                // Evaluate the hand
+                string result = EvaluateHand(hand);
+
+                // Display the result on the label
+                lblResult.Text = result;
             }
             else
             {
+                // Not enough balance
                 MessageBox.Show("Not enough balance to place a bet!");
             }
         }
+
 
         private string EvaluateHand(List<Card> hand)
         {
