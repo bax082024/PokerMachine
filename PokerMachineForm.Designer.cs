@@ -43,7 +43,6 @@
             lblTitle = new Label();
             pictureBox1 = new PictureBox();
             lblResult = new Label();
-            btnPaytable = new Button();
             btnHold3 = new Button();
             lblBalance = new Label();
             btnHold1 = new Button();
@@ -83,7 +82,6 @@
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(lblResult);
-            panel1.Controls.Add(btnPaytable);
             panel1.Controls.Add(btnHold3);
             panel1.Controls.Add(lblBalance);
             panel1.Controls.Add(btnHold1);
@@ -260,20 +258,6 @@
             lblResult.TabIndex = 11;
             lblResult.Text = "``";
             // 
-            // btnPaytable
-            // 
-            btnPaytable.Anchor = AnchorStyles.None;
-            btnPaytable.BackColor = Color.Sienna;
-            btnPaytable.FlatStyle = FlatStyle.Popup;
-            btnPaytable.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnPaytable.Location = new Point(795, 544);
-            btnPaytable.Name = "btnPaytable";
-            btnPaytable.Size = new Size(75, 30);
-            btnPaytable.TabIndex = 12;
-            btnPaytable.Text = "Paytable";
-            btnPaytable.UseVisualStyleBackColor = false;
-            btnPaytable.Click += btnPaytable_Click;
-            // 
             // btnHold3
             // 
             btnHold3.Anchor = AnchorStyles.None;
@@ -441,7 +425,6 @@
         private Label lblBet;
         private Label lblBalance;
         private Label lblResult;
-        private Button btnPaytable;
         private Label lblTitle;
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
