@@ -24,6 +24,12 @@ namespace PokerMachine
             }
         }
 
+        public void Shuffle()
+        {
+            Random random = new Random();
+            cards = cards.OrderBy(c => random.Next()).ToList();
+        }
+
 
     }
 }
