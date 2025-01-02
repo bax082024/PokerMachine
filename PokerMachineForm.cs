@@ -300,6 +300,12 @@ namespace PokerMachine
             return hand.GroupBy(c => c.Rank).Count(g => g.Count() == 2) == 2;
         }
 
+        private bool IsJacksOrBetter(List<Card> hand)
+        {
+            var highCards = new HashSet<string> { "j", "q", "k", "ace" };
+            return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 2 && highCards.Contains(g.Key));
+        }
+
 
 
 
