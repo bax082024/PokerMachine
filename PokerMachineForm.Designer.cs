@@ -140,7 +140,7 @@
             pictureBox5.BackColor = Color.LightGray;
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox5.Location = new Point(736, 197);
+            pictureBox5.Location = new Point(736, 213);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(156, 205);
             pictureBox5.TabIndex = 4;
@@ -164,7 +164,7 @@
             pictureBox4.BackColor = Color.LightGray;
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox4.Location = new Point(563, 197);
+            pictureBox4.Location = new Point(563, 213);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(156, 205);
             pictureBox4.TabIndex = 3;
@@ -186,7 +186,7 @@
             pictureBox3.BackColor = Color.LightGray;
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Location = new Point(389, 197);
+            pictureBox3.Location = new Point(389, 213);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(156, 205);
             pictureBox3.TabIndex = 2;
@@ -207,7 +207,7 @@
             pictureBox2.BackColor = Color.LightGray;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Location = new Point(215, 197);
+            pictureBox2.Location = new Point(215, 213);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(156, 205);
             pictureBox2.TabIndex = 1;
@@ -217,7 +217,7 @@
             // 
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblTitle.ForeColor = Color.DarkSlateGray;
+            lblTitle.ForeColor = Color.Goldenrod;
             lblTitle.Location = new Point(275, 0);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(350, 60);
@@ -229,7 +229,7 @@
             pictureBox1.BackColor = Color.LightGray;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(40, 197);
+            pictureBox1.Location = new Point(40, 213);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(156, 205);
             pictureBox1.TabIndex = 0;
@@ -239,8 +239,8 @@
             // 
             lblResult.AutoSize = true;
             lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResult.ForeColor = Color.Gold;
-            lblResult.Location = new Point(344, 454);
+            lblResult.ForeColor = Color.Goldenrod;
+            lblResult.Location = new Point(344, 182);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(27, 30);
             lblResult.TabIndex = 11;
@@ -264,7 +264,7 @@
             btnHold3.BackColor = Color.LightBlue;
             btnHold3.FlatStyle = FlatStyle.Popup;
             btnHold3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold3.Location = new Point(428, 420);
+            btnHold3.Location = new Point(428, 436);
             btnHold3.Name = "btnHold3";
             btnHold3.Size = new Size(75, 34);
             btnHold3.TabIndex = 5;
@@ -288,7 +288,7 @@
             btnHold1.BackColor = Color.LightBlue;
             btnHold1.FlatStyle = FlatStyle.Popup;
             btnHold1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold1.Location = new Point(76, 420);
+            btnHold1.Location = new Point(76, 436);
             btnHold1.Name = "btnHold1";
             btnHold1.Size = new Size(75, 34);
             btnHold1.TabIndex = 3;
@@ -312,7 +312,7 @@
             btnHold2.BackColor = Color.LightBlue;
             btnHold2.FlatStyle = FlatStyle.Popup;
             btnHold2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold2.Location = new Point(251, 420);
+            btnHold2.Location = new Point(251, 436);
             btnHold2.Name = "btnHold2";
             btnHold2.Size = new Size(75, 34);
             btnHold2.TabIndex = 4;
@@ -338,7 +338,7 @@
             btnHold4.BackColor = Color.LightBlue;
             btnHold4.FlatStyle = FlatStyle.Popup;
             btnHold4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold4.Location = new Point(599, 420);
+            btnHold4.Location = new Point(599, 436);
             btnHold4.Name = "btnHold4";
             btnHold4.Size = new Size(75, 34);
             btnHold4.TabIndex = 6;
@@ -351,7 +351,7 @@
             btnHold5.BackColor = Color.LightBlue;
             btnHold5.FlatStyle = FlatStyle.Popup;
             btnHold5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold5.Location = new Point(773, 420);
+            btnHold5.Location = new Point(773, 436);
             btnHold5.Name = "btnHold5";
             btnHold5.Size = new Size(75, 34);
             btnHold5.TabIndex = 7;
@@ -378,7 +378,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.SteelBlue;
+            BackColor = Color.RoyalBlue;
             ClientSize = new Size(935, 621);
             Controls.Add(panel1);
             Name = "PokerMachineForm";

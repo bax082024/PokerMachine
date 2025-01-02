@@ -395,7 +395,7 @@ namespace PokerMachine
                     Text = entry.Key,
                     AutoSize = true,
                     ForeColor = Color.Gold,
-                    Font = new Font("Arial", 12, FontStyle.Bold),
+                    Font = new Font("Arial", 13, FontStyle.Bold),
                     Location = new Point(10, row * 20)
                 };
                 panelLeftPaytable.Controls.Add(handTypeLabel);
@@ -406,7 +406,7 @@ namespace PokerMachine
                     Text = entry.Value.ToString(),
                     AutoSize = true,
                     ForeColor = Color.Gold,
-                    Font = new Font("Arial", 12, FontStyle.Bold),
+                    Font = new Font("Arial", 13, FontStyle.Bold),
                     Location = new Point(10, row * 20)
                 };
                 panelExtraLeft.Controls.Add(payoutLabel);
@@ -424,7 +424,7 @@ namespace PokerMachine
                     Text = entry.Key,
                     AutoSize = true,
                     ForeColor = Color.Gold,
-                    Font = new Font("Arial", 12, FontStyle.Bold),
+                    Font = new Font("Arial", 13, FontStyle.Bold),
                     Location = new Point(10, row * 20)
                 };
                 panelRightPaytable.Controls.Add(handTypeLabel);
@@ -435,7 +435,7 @@ namespace PokerMachine
                     Text = entry.Value.ToString(),
                     AutoSize = true,
                     ForeColor = Color.Gold,
-                    Font = new Font("Arial", 12, FontStyle.Bold),
+                    Font = new Font("Arial", 13, FontStyle.Bold),
                     Location = new Point(10, row * 20)
                 };
                 panelExtraRight.Controls.Add(payoutLabel);
