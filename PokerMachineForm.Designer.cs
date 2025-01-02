@@ -37,6 +37,8 @@
             pictureBox3 = new PictureBox();
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
+            btnDeal = new Button();
+            button2 = new Button();
             panel1.SuspendLayout();
             statusStrip1.SuspendLayout();
             panel2.SuspendLayout();
@@ -50,6 +52,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnDeal);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(statusStrip1);
             panel1.Dock = DockStyle.Fill;
@@ -137,6 +141,27 @@
             pictureBox5.TabIndex = 4;
             pictureBox5.TabStop = false;
             // 
+            // btnDeal
+            // 
+            btnDeal.BackColor = Color.OliveDrab;
+            btnDeal.FlatStyle = FlatStyle.Popup;
+            btnDeal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnDeal.Location = new Point(402, 476);
+            btnDeal.Name = "btnDeal";
+            btnDeal.Size = new Size(126, 63);
+            btnDeal.TabIndex = 2;
+            btnDeal.Text = "Deal";
+            btnDeal.UseVisualStyleBackColor = false;
+            // 
+            // button2
+            // 
+            button2.Location = new Point(294, 411);
+            button2.Name = "button2";
+            button2.Size = new Size(75, 23);
+            button2.TabIndex = 3;
+            button2.Text = "button2";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -171,5 +196,7 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
+        private Button button2;
+        private Button btnDeal;
     }
 }
