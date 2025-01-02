@@ -1,3 +1,5 @@
+using System.Drawing.Drawing2D;
+
 namespace PokerMachine
 {
     public partial class PokerMachineForm : Form
@@ -6,11 +8,25 @@ namespace PokerMachine
         private int currentBet = 10;
 
         private bool[] holdFlags = new bool[5];
-        private List<Card> currentHand;
-        private Deck deck;
+        private List<Card> currentHand = new List<Card>();
+        private Deck deck = new Deck();
 
 
         private bool isFirstTurn = true;
+
+        private readonly Dictionary<string, int> paytable = new Dictionary<string, int>
+        {
+            { "Royal Flush", 250 },
+            { "Straight Flush", 50 },
+            { "Four of a Kind", 25 },
+            { "Full House", 9 },
+            { "Flush", 6 },
+            { "Straight", 4 },
+            { "Three of a Kind", 3 },
+            { "Two Pair", 2 },
+            { "Jacks or Better", 1 }
+        };
+
 
 
         public PokerMachineForm()
@@ -62,50 +78,82 @@ namespace PokerMachine
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
-                deck = new Deck(); // Create a new deck
-                deck.Shuffle(); // Shuffle the deck
-                currentHand = DealCards(deck); // Deal 5 cards
-                DisplayHand(currentHand); // Show cards in PictureBoxes
+                deck = new Deck();
+                deck.Shuffle();
+                currentHand = DealCards(deck);
+                DisplayHand(currentHand);
 
-                isFirstTurn = false; // Move to second turn
-                btnDeal.Text = "Draw"; // Update button text
+                isFirstTurn = false;
+                btnDeal.Text = "Draw";
             }
             else
             {
                 // Second Turn: Replace unheld cards
                 for (int i = 0; i < currentHand.Count; i++)
                 {
-                    if (!holdFlags[i]) // Replace only if not held
+                    if (!holdFlags[i])
                     {
                         currentHand[i] = deck.Draw();
                     }
                 }
-                DisplayHand(currentHand); // Show updated cards
+                DisplayHand(currentHand);
 
-                // Evaluate the hand and display results
+                // Evaluate the hand and calculate the payout
                 string result = EvaluateHand(currentHand);
-                lblResult.Text = result;
+                int payout = CalculatePayout(result, currentBet);
 
-                // Reset for the next round
+                // Update lblResult to display hand type and payout
+                if (payout > 0)
+                {
+                    lblResult.Text = $"{result}! You won ${payout}.";
+                }
+                else
+                {
+                    lblResult.Text = $"{result}. Better luck next time!";
+                }
+
+                // Update balance and reset for the next round
+                balance += payout;
+                lblBalance.Text = $"Balance: ${balance}";
+
                 isFirstTurn = true;
                 btnDeal.Text = "Deal";
-                Array.Fill(holdFlags, false); // Reset hold flags
-                ResetHoldButtons(); // Reset hold button appearance
+                Array.Fill(holdFlags, false);
+                ResetHoldButtons();
             }
+
         }
+
 
 
 
 
         private string EvaluateHand(List<Card> hand)
         {
-            // Simplified example for a pair
-            var rankGroups = hand.GroupBy(card => card.Rank);
-            if (rankGroups.Any(group => group.Count() == 2))
-                return "Pair!";
+            // Example logic to determine hand type
+            if (IsRoyalFlush(hand)) return "Royal Flush";
+            if (IsStraightFlush(hand)) return "Straight Flush";
+            if (IsFourOfAKind(hand)) return "Four of a Kind";
+            if (IsFullHouse(hand)) return "Full House";
+            if (IsFlush(hand)) return "Flush";
+            if (IsStraight(hand)) return "Straight";
+            if (IsThreeOfAKind(hand)) return "Three of a Kind";
+            if (IsTwoPair(hand)) return "Two Pair";
+            if (IsJacksOrBetter(hand)) return "Jacks or Better";
 
-            return "No Winning Hand!";
+            return "No Winning Hand";
         }
+
+        private int CalculatePayout(string handType, int betAmount)
+        {
+            if (paytable.ContainsKey(handType))
+            {
+                return paytable[handType] * betAmount;
+            }
+            return 0; // No payout for losing hands
+        }
+
+
 
         private void btnHold1_Click(object sender, EventArgs e)
         {
@@ -182,11 +230,112 @@ namespace PokerMachine
             UpdateHoldButtonAppearance(btnHold5, false);
         }
 
+        private void btnPaytable_Click(object sender, EventArgs e)
+        {
+            string paytableText = "Paytable:\n\n";
+            foreach (var entry in paytable)
+            {
+                paytableText += $"{entry.Key}: {entry.Value}x\n";
+            }
+            MessageBox.Show(paytableText, "Paytable", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        // Paytable
+
+        private bool IsRoyalFlush(List<Card> hand)
+        {
+            return IsStraight(hand) && IsFlush(hand) && hand.Any(c => c.Rank == "ace");
+        }
+
+        private bool IsStraightFlush(List<Card> hand)
+        {
+            return IsStraight(hand) && IsFlush(hand);
+        }
+
+        private bool IsFourOfAKind(List<Card> hand)
+        {
+            return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 4);
+        }
+
+        private bool IsFullHouse(List<Card> hand)
+        {
+            var groups = hand.GroupBy(c => c.Rank).ToList();
+            return groups.Count == 2 && (groups[0].Count() == 3 || groups[1].Count() == 3);
+        }
+
+        private bool IsFlush(List<Card> hand)
+        {
+            return hand.All(c => c.Suit == hand[0].Suit);
+        }
+
+        private bool IsStraight(List<Card> hand)
+        {
+            var ranks = hand.Select(c => GetRankValue(c.Rank)).OrderBy(v => v).ToList();
+            for (int i = 1; i < ranks.Count; i++)
+            {
+                if (ranks[i] != ranks[i - 1] + 1)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private int GetRankValue(string rank)
+        {
+            return rank switch
+            {
+                "2" => 2,
+                "3" => 3,
+                "4" => 4,
+                "5" => 5,
+                "6" => 6,
+                "7" => 7,
+                "8" => 8,
+                "9" => 9,
+                "10" => 10,
+                "j" => 11,
+                "q" => 12,
+                "k" => 13,
+                "ace" => 14,
+                _ => 0
+            };
+        }
+
+        private bool IsThreeOfAKind(List<Card> hand)
+        {
+            return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 3);
+        }
+
+        private bool IsTwoPair(List<Card> hand)
+        {
+            return hand.GroupBy(c => c.Rank).Count(g => g.Count() == 2) == 2;
+        }
+
+        private bool IsJacksOrBetter(List<Card> hand)
+        {
+            var highCards = new HashSet<string> { "j", "q", "k", "ace" };
+            return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 2 && highCards.Contains(g.Key));
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.Black,  // Top color
+                Color.DimGray,        // Bottom color
+                LinearGradientMode.Vertical))
+            {
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
+        }
 
 
 
 
 
     }
+
+
 
 }

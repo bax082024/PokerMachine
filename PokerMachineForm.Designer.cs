@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnPaytable = new Button();
             lblResult = new Label();
             lblBalance = new Label();
             lblBet = new Label();
@@ -47,6 +48,7 @@
             pictureBox1 = new PictureBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            lblTitle = new Label();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -60,6 +62,8 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lblTitle);
+            panel1.Controls.Add(btnPaytable);
             panel1.Controls.Add(lblResult);
             panel1.Controls.Add(lblBalance);
             panel1.Controls.Add(lblBet);
@@ -78,11 +82,21 @@
             panel1.Size = new Size(930, 621);
             panel1.TabIndex = 0;
             // 
+            // btnPaytable
+            // 
+            btnPaytable.Location = new Point(830, 551);
+            btnPaytable.Name = "btnPaytable";
+            btnPaytable.Size = new Size(75, 23);
+            btnPaytable.TabIndex = 12;
+            btnPaytable.Text = "button1";
+            btnPaytable.UseVisualStyleBackColor = true;
+            btnPaytable.Click += btnPaytable_Click;
+            // 
             // lblResult
             // 
             lblResult.AutoSize = true;
             lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblResult.Location = new Point(402, 132);
+            lblResult.Location = new Point(299, 132);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(27, 30);
             lblResult.TabIndex = 11;
@@ -282,6 +296,16 @@
             toolStripStatusLabel1.Size = new Size(74, 17);
             toolStripStatusLabel1.Text = "Bax Creation";
             // 
+            // lblTitle
+            // 
+            lblTitle.AutoSize = true;
+            lblTitle.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblTitle.Location = new Point(273, 23);
+            lblTitle.Name = "lblTitle";
+            lblTitle.Size = new Size(350, 60);
+            lblTitle.TabIndex = 13;
+            lblTitle.Text = "Video Poker";
+            // 
             // PokerMachineForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -326,5 +350,7 @@
         private Label lblBet;
         private Label lblBalance;
         private Label lblResult;
+        private Button btnPaytable;
+        private Label lblTitle;
     }
 }
