@@ -290,6 +290,12 @@ namespace PokerMachine
             };
         }
 
+        private bool IsThreeOfAKind(List<Card> hand)
+        {
+            return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 3);
+        }
+
+
 
 
 
