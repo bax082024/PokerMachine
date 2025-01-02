@@ -6,5 +6,14 @@ namespace PokerMachine
         {
             InitializeComponent();
         }
+
+        private Image LoadCardImage(string rank, string suit)
+        {
+            string imagePath = $"Images/Cards/{rank}_{suit}.png";
+            return Image.FromFile(imagePath);
+        }
+
+
+
     }
 }
