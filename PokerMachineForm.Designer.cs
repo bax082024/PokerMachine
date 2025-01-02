@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            panelRight = new Panel();
-            rightPaytable = new Panel();
-            panelLeft = new Panel();
-            leftPaytable = new Panel();
+            panelExtraRight = new Panel();
+            panelRightPaytable = new Panel();
+            panelExtraLeft = new Panel();
+            panelLeftPaytable = new Panel();
             pictureBox5 = new PictureBox();
             numericUpDownBet = new NumericUpDown();
             pictureBox4 = new PictureBox();
@@ -69,10 +69,10 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(panelRight);
-            panel1.Controls.Add(rightPaytable);
-            panel1.Controls.Add(panelLeft);
-            panel1.Controls.Add(leftPaytable);
+            panel1.Controls.Add(panelExtraRight);
+            panel1.Controls.Add(panelRightPaytable);
+            panel1.Controls.Add(panelExtraLeft);
+            panel1.Controls.Add(panelLeftPaytable);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(numericUpDownBet);
             panel1.Controls.Add(pictureBox4);
@@ -99,41 +99,41 @@
             panel1.Size = new Size(935, 621);
             panel1.TabIndex = 0;
             // 
-            // panelRight
+            // panelExtraRight
             // 
-            panelRight.BackColor = Color.Tomato;
-            panelRight.BorderStyle = BorderStyle.FixedSingle;
-            panelRight.Location = new Point(650, 66);
-            panelRight.Name = "panelRight";
-            panelRight.Size = new Size(89, 113);
-            panelRight.TabIndex = 23;
+            panelExtraRight.BackColor = Color.Tomato;
+            panelExtraRight.BorderStyle = BorderStyle.FixedSingle;
+            panelExtraRight.Location = new Point(650, 66);
+            panelExtraRight.Name = "panelExtraRight";
+            panelExtraRight.Size = new Size(89, 113);
+            panelExtraRight.TabIndex = 23;
             // 
-            // rightPaytable
+            // panelRightPaytable
             // 
-            rightPaytable.BackColor = Color.DarkBlue;
-            rightPaytable.BorderStyle = BorderStyle.FixedSingle;
-            rightPaytable.Location = new Point(453, 66);
-            rightPaytable.Name = "rightPaytable";
-            rightPaytable.Size = new Size(200, 113);
-            rightPaytable.TabIndex = 22;
+            panelRightPaytable.BackColor = Color.DarkBlue;
+            panelRightPaytable.BorderStyle = BorderStyle.FixedSingle;
+            panelRightPaytable.Location = new Point(453, 66);
+            panelRightPaytable.Name = "panelRightPaytable";
+            panelRightPaytable.Size = new Size(200, 113);
+            panelRightPaytable.TabIndex = 22;
             // 
-            // panelLeft
+            // panelExtraLeft
             // 
-            panelLeft.BackColor = Color.Tomato;
-            panelLeft.BorderStyle = BorderStyle.FixedSingle;
-            panelLeft.Location = new Point(299, 66);
-            panelLeft.Name = "panelLeft";
-            panelLeft.Size = new Size(89, 113);
-            panelLeft.TabIndex = 21;
+            panelExtraLeft.BackColor = Color.Tomato;
+            panelExtraLeft.BorderStyle = BorderStyle.FixedSingle;
+            panelExtraLeft.Location = new Point(299, 66);
+            panelExtraLeft.Name = "panelExtraLeft";
+            panelExtraLeft.Size = new Size(89, 113);
+            panelExtraLeft.TabIndex = 21;
             // 
-            // leftPaytable
+            // panelLeftPaytable
             // 
-            leftPaytable.BackColor = Color.DarkBlue;
-            leftPaytable.BorderStyle = BorderStyle.FixedSingle;
-            leftPaytable.Location = new Point(102, 66);
-            leftPaytable.Name = "leftPaytable";
-            leftPaytable.Size = new Size(200, 113);
-            leftPaytable.TabIndex = 20;
+            panelLeftPaytable.BackColor = Color.DarkBlue;
+            panelLeftPaytable.BorderStyle = BorderStyle.FixedSingle;
+            panelLeftPaytable.Location = new Point(102, 66);
+            panelLeftPaytable.Name = "panelLeftPaytable";
+            panelLeftPaytable.Size = new Size(200, 113);
+            panelLeftPaytable.TabIndex = 20;
             // 
             // pictureBox5
             // 
@@ -423,9 +423,9 @@
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
         private NumericUpDown numericUpDownBet;
-        private Panel panelLeft;
-        private Panel leftPaytable;
-        private Panel panelRight;
-        private Panel rightPaytable;
+        private Panel panelExtraLeft;
+        private Panel panelLeftPaytable;
+        private Panel panelExtraRight;
+        private Panel panelRightPaytable;
     }
 }
