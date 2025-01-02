@@ -41,10 +41,22 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
-            Deck deck = new Deck();
-            deck.Shuffle();
-            List<Card> hand = DealCards(deck);
-            DisplayHand(hand);
+            if (balance >= currentBet)
+            {
+                balance -= currentBet;
+                lblBalance.Text = $"Balance: ${balance}";
+
+                // Deal cards
+                Deck deck = new Deck();
+                deck.Shuffle();
+                List<Card> hand = DealCards(deck);
+                DisplayHand(hand);
+            }
+            else
+            {
+                MessageBox.Show("Not enough balance to place a bet!");
+            }
         }
+
     }
 }
