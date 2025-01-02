@@ -245,6 +245,12 @@ namespace PokerMachine
             return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 4);
         }
 
+        private bool IsFullHouse(List<Card> hand)
+        {
+            var groups = hand.GroupBy(c => c.Rank).ToList();
+            return groups.Count == 2 && (groups[0].Count() == 3 || groups[1].Count() == 3);
+        }
+
 
 
 
