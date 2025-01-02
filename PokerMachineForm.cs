@@ -251,6 +251,11 @@ namespace PokerMachine
             return groups.Count == 2 && (groups[0].Count() == 3 || groups[1].Count() == 3);
         }
 
+        private bool IsFlush(List<Card> hand)
+        {
+            return hand.All(c => c.Suit == hand[0].Suit);
+        }
+
 
 
 
