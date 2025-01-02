@@ -256,6 +256,40 @@ namespace PokerMachine
             return hand.All(c => c.Suit == hand[0].Suit);
         }
 
+        private bool IsStraight(List<Card> hand)
+        {
+            var ranks = hand.Select(c => GetRankValue(c.Rank)).OrderBy(v => v).ToList();
+            for (int i = 1; i < ranks.Count; i++)
+            {
+                if (ranks[i] != ranks[i - 1] + 1)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private int GetRankValue(string rank)
+        {
+            return rank switch
+            {
+                "2" => 2,
+                "3" => 3,
+                "4" => 4,
+                "5" => 5,
+                "6" => 6,
+                "7" => 7,
+                "8" => 8,
+                "9" => 9,
+                "10" => 10,
+                "j" => 11,
+                "q" => 12,
+                "k" => 13,
+                "ace" => 14,
+                _ => 0
+            };
+        }
+
 
 
 
