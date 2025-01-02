@@ -72,7 +72,7 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
-            lblResult.Text = "";
+            lblResult.Text = "Good luck!";
 
             if (isFirstTurn)
             {
