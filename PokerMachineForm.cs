@@ -5,7 +5,7 @@ namespace PokerMachine
     public partial class PokerMachineForm : Form
     {
         private int balance = 100;
-        private int currentBet = 10;
+        private int currentBet = 1;
 
         private bool[] holdFlags = new bool[5];
         private List<Card> currentHand = new List<Card>();
@@ -328,17 +328,17 @@ namespace PokerMachine
             return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 2 && highCards.Contains(g.Key));
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
-                this.ClientRectangle,
-                Color.Gray,  // Top color
-                Color.DimGray,        // Bottom color
-                LinearGradientMode.Vertical))
-            {
-                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
-            }
-        }
+        //protected override void OnPaintBackground(PaintEventArgs e)
+        //{
+        //    using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+        //        this.ClientRectangle,
+        //        Color.Gray,  // Top color
+        //        Color.DimGray,        // Bottom color
+        //        LinearGradientMode.Vertical))
+        //    {
+        //        e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+        //    }
+        //}
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
