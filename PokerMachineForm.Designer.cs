@@ -43,6 +43,9 @@
             btnHold3 = new Button();
             btnHold4 = new Button();
             btnHold5 = new Button();
+            btnBet = new Button();
+            lblBet = new Label();
+            lblCredits = new Label();
             panel1.SuspendLayout();
             statusStrip1.SuspendLayout();
             panel2.SuspendLayout();
@@ -56,6 +59,9 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(lblCredits);
+            panel1.Controls.Add(lblBet);
+            panel1.Controls.Add(btnBet);
             panel1.Controls.Add(btnHold5);
             panel1.Controls.Add(btnHold4);
             panel1.Controls.Add(btnHold3);
@@ -102,6 +108,7 @@
             // pictureBox1
             // 
             pictureBox1.BackColor = SystemColors.Info;
+            pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(13, 17);
             pictureBox1.Name = "pictureBox1";
@@ -112,6 +119,7 @@
             // pictureBox2
             // 
             pictureBox2.BackColor = SystemColors.Info;
+            pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Location = new Point(188, 17);
             pictureBox2.Name = "pictureBox2";
@@ -122,6 +130,7 @@
             // pictureBox3
             // 
             pictureBox3.BackColor = SystemColors.Info;
+            pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
             pictureBox3.Location = new Point(362, 17);
             pictureBox3.Name = "pictureBox3";
@@ -132,6 +141,7 @@
             // pictureBox4
             // 
             pictureBox4.BackColor = SystemColors.Info;
+            pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
             pictureBox4.Location = new Point(536, 17);
             pictureBox4.Name = "pictureBox4";
@@ -142,6 +152,7 @@
             // pictureBox5
             // 
             pictureBox5.BackColor = SystemColors.Info;
+            pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
             pictureBox5.Location = new Point(709, 17);
             pictureBox5.Name = "pictureBox5";
@@ -154,7 +165,7 @@
             btnDeal.BackColor = Color.OliveDrab;
             btnDeal.FlatStyle = FlatStyle.Popup;
             btnDeal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeal.Location = new Point(402, 476);
+            btnDeal.Location = new Point(402, 511);
             btnDeal.Name = "btnDeal";
             btnDeal.Size = new Size(126, 63);
             btnDeal.TabIndex = 2;
@@ -221,6 +232,38 @@
             btnHold5.Text = "Hold";
             btnHold5.UseVisualStyleBackColor = false;
             // 
+            // btnBet
+            // 
+            btnBet.BackColor = Color.Gray;
+            btnBet.FlatStyle = FlatStyle.Popup;
+            btnBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnBet.Location = new Point(251, 511);
+            btnBet.Name = "btnBet";
+            btnBet.Size = new Size(75, 28);
+            btnBet.TabIndex = 8;
+            btnBet.Text = "Bet";
+            btnBet.UseVisualStyleBackColor = false;
+            // 
+            // lblBet
+            // 
+            lblBet.AutoSize = true;
+            lblBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBet.Location = new Point(255, 485);
+            lblBet.Name = "lblBet";
+            lblBet.Size = new Size(40, 17);
+            lblBet.TabIndex = 9;
+            lblBet.Text = "Bet : ";
+            // 
+            // lblCredits
+            // 
+            lblCredits.AutoSize = true;
+            lblCredits.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblCredits.Location = new Point(419, 485);
+            lblCredits.Name = "lblCredits";
+            lblCredits.Size = new Size(84, 17);
+            lblCredits.TabIndex = 10;
+            lblCredits.Text = "Credits : 100";
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -261,5 +304,8 @@
         private Button btnHold4;
         private Button btnHold3;
         private Button btnHold2;
+        private Button btnBet;
+        private Label lblBet;
+        private Label lblCredits;
     }
 }
