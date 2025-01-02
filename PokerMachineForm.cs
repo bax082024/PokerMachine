@@ -1,3 +1,5 @@
+using System.Drawing.Drawing2D;
+
 namespace PokerMachine
 {
     public partial class PokerMachineForm : Form
@@ -6,8 +8,8 @@ namespace PokerMachine
         private int currentBet = 10;
 
         private bool[] holdFlags = new bool[5];
-        private List<Card> currentHand;
-        private Deck deck;
+        private List<Card> currentHand = new List<Card>();
+        private Deck deck = new Deck();
 
 
         private bool isFirstTurn = true;
@@ -98,18 +100,28 @@ namespace PokerMachine
 
                 // Evaluate the hand and calculate the payout
                 string result = EvaluateHand(currentHand);
-                lblResult.Text = result;
-
                 int payout = CalculatePayout(result, currentBet);
+
+                // Update lblResult to display hand type and payout
+                if (payout > 0)
+                {
+                    lblResult.Text = $"{result}! You won ${payout}.";
+                }
+                else
+                {
+                    lblResult.Text = $"{result}. Better luck next time!";
+                }
+
+                // Update balance and reset for the next round
                 balance += payout;
                 lblBalance.Text = $"Balance: ${balance}";
 
-                // Reset for the next round
                 isFirstTurn = true;
                 btnDeal.Text = "Deal";
                 Array.Fill(holdFlags, false);
                 ResetHoldButtons();
             }
+
         }
 
 
@@ -306,6 +318,17 @@ namespace PokerMachine
             return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 2 && highCards.Contains(g.Key));
         }
 
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+                this.ClientRectangle,
+                Color.Black,  // Top color
+                Color.DimGray,        // Bottom color
+                LinearGradientMode.Vertical))
+            {
+                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+            }
+        }
 
 
 
