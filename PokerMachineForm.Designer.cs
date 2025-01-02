@@ -68,6 +68,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
             panel1.Controls.Add(panelExtraRight);
             panel1.Controls.Add(panelRightPaytable);
             panel1.Controls.Add(panelExtraLeft);
@@ -101,8 +102,8 @@
             // 
             panelExtraRight.Anchor = AnchorStyles.None;
             panelExtraRight.BackColor = Color.Tomato;
-            panelExtraRight.BorderStyle = BorderStyle.FixedSingle;
-            panelExtraRight.Location = new Point(650, 66);
+            panelExtraRight.BorderStyle = BorderStyle.Fixed3D;
+            panelExtraRight.Location = new Point(649, 65);
             panelExtraRight.Name = "panelExtraRight";
             panelExtraRight.Size = new Size(89, 113);
             panelExtraRight.TabIndex = 23;
@@ -111,8 +112,8 @@
             // 
             panelRightPaytable.Anchor = AnchorStyles.None;
             panelRightPaytable.BackColor = Color.DarkBlue;
-            panelRightPaytable.BorderStyle = BorderStyle.FixedSingle;
-            panelRightPaytable.Location = new Point(453, 66);
+            panelRightPaytable.BorderStyle = BorderStyle.Fixed3D;
+            panelRightPaytable.Location = new Point(452, 65);
             panelRightPaytable.Name = "panelRightPaytable";
             panelRightPaytable.Size = new Size(200, 113);
             panelRightPaytable.TabIndex = 22;
@@ -121,8 +122,8 @@
             // 
             panelExtraLeft.Anchor = AnchorStyles.None;
             panelExtraLeft.BackColor = Color.Tomato;
-            panelExtraLeft.BorderStyle = BorderStyle.FixedSingle;
-            panelExtraLeft.Location = new Point(299, 66);
+            panelExtraLeft.BorderStyle = BorderStyle.Fixed3D;
+            panelExtraLeft.Location = new Point(298, 65);
             panelExtraLeft.Name = "panelExtraLeft";
             panelExtraLeft.Size = new Size(89, 113);
             panelExtraLeft.TabIndex = 21;
@@ -131,8 +132,8 @@
             // 
             panelLeftPaytable.Anchor = AnchorStyles.None;
             panelLeftPaytable.BackColor = Color.DarkBlue;
-            panelLeftPaytable.BorderStyle = BorderStyle.FixedSingle;
-            panelLeftPaytable.Location = new Point(102, 66);
+            panelLeftPaytable.BorderStyle = BorderStyle.Fixed3D;
+            panelLeftPaytable.Location = new Point(101, 65);
             panelLeftPaytable.Name = "panelLeftPaytable";
             panelLeftPaytable.Size = new Size(200, 113);
             panelLeftPaytable.TabIndex = 20;
@@ -143,7 +144,7 @@
             pictureBox5.BackColor = Color.LightGray;
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox5.Location = new Point(736, 213);
+            pictureBox5.Location = new Point(735, 212);
             pictureBox5.Name = "pictureBox5";
             pictureBox5.Size = new Size(156, 205);
             pictureBox5.TabIndex = 4;
@@ -154,7 +155,7 @@
             numericUpDownBet.Anchor = AnchorStyles.None;
             numericUpDownBet.BackColor = SystemColors.Info;
             numericUpDownBet.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            numericUpDownBet.Location = new Point(249, 533);
+            numericUpDownBet.Location = new Point(248, 532);
             numericUpDownBet.Maximum = new decimal(new int[] { 10, 0, 0, 0 });
             numericUpDownBet.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownBet.Name = "numericUpDownBet";
@@ -169,7 +170,7 @@
             pictureBox4.BackColor = Color.LightGray;
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox4.Location = new Point(563, 213);
+            pictureBox4.Location = new Point(562, 212);
             pictureBox4.Name = "pictureBox4";
             pictureBox4.Size = new Size(156, 205);
             pictureBox4.TabIndex = 3;
@@ -180,7 +181,7 @@
             pictureBox7.Anchor = AnchorStyles.None;
             pictureBox7.BackgroundImage = Properties.Resources.poker_cards;
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox7.Location = new Point(186, 11);
+            pictureBox7.Location = new Point(185, 10);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(54, 49);
             pictureBox7.TabIndex = 15;
@@ -193,7 +194,7 @@
             pictureBox3.BackColor = Color.LightGray;
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox3.Location = new Point(389, 213);
+            pictureBox3.Location = new Point(388, 212);
             pictureBox3.Name = "pictureBox3";
             pictureBox3.Size = new Size(156, 205);
             pictureBox3.TabIndex = 2;
@@ -204,7 +205,7 @@
             pictureBox6.Anchor = AnchorStyles.None;
             pictureBox6.BackgroundImage = Properties.Resources.poker_cards;
             pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox6.Location = new Point(653, 11);
+            pictureBox6.Location = new Point(652, 10);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(54, 49);
             pictureBox6.TabIndex = 14;
@@ -216,7 +217,7 @@
             pictureBox2.BackColor = Color.LightGray;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox2.Location = new Point(215, 213);
+            pictureBox2.Location = new Point(214, 212);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(156, 205);
             pictureBox2.TabIndex = 1;
@@ -228,7 +229,7 @@
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Goldenrod;
-            lblTitle.Location = new Point(275, 0);
+            lblTitle.Location = new Point(274, -1);
             lblTitle.Name = "lblTitle";
             lblTitle.Size = new Size(350, 60);
             lblTitle.TabIndex = 13;
@@ -240,7 +241,7 @@
             pictureBox1.BackColor = Color.LightGray;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
-            pictureBox1.Location = new Point(40, 213);
+            pictureBox1.Location = new Point(39, 212);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(156, 205);
             pictureBox1.TabIndex = 0;
@@ -252,7 +253,7 @@
             lblResult.AutoSize = true;
             lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResult.ForeColor = Color.Goldenrod;
-            lblResult.Location = new Point(344, 182);
+            lblResult.Location = new Point(343, 181);
             lblResult.Name = "lblResult";
             lblResult.Size = new Size(27, 30);
             lblResult.TabIndex = 11;
@@ -264,7 +265,7 @@
             btnHold3.BackColor = Color.LightBlue;
             btnHold3.FlatStyle = FlatStyle.Popup;
             btnHold3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold3.Location = new Point(428, 436);
+            btnHold3.Location = new Point(427, 435);
             btnHold3.Name = "btnHold3";
             btnHold3.Size = new Size(75, 34);
             btnHold3.TabIndex = 5;
@@ -278,7 +279,7 @@
             lblBalance.AutoSize = true;
             lblBalance.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBalance.ForeColor = Color.DarkGray;
-            lblBalance.Location = new Point(419, 485);
+            lblBalance.Location = new Point(418, 484);
             lblBalance.Name = "lblBalance";
             lblBalance.Size = new Size(84, 17);
             lblBalance.TabIndex = 10;
@@ -290,7 +291,7 @@
             btnHold1.BackColor = Color.LightBlue;
             btnHold1.FlatStyle = FlatStyle.Popup;
             btnHold1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold1.Location = new Point(76, 436);
+            btnHold1.Location = new Point(75, 435);
             btnHold1.Name = "btnHold1";
             btnHold1.Size = new Size(75, 34);
             btnHold1.TabIndex = 3;
@@ -304,7 +305,7 @@
             lblBet.AutoSize = true;
             lblBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBet.ForeColor = Color.DarkGray;
-            lblBet.Location = new Point(215, 506);
+            lblBet.Location = new Point(214, 505);
             lblBet.Name = "lblBet";
             lblBet.Size = new Size(40, 17);
             lblBet.TabIndex = 9;
@@ -316,7 +317,7 @@
             btnHold2.BackColor = Color.LightBlue;
             btnHold2.FlatStyle = FlatStyle.Popup;
             btnHold2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold2.Location = new Point(251, 436);
+            btnHold2.Location = new Point(250, 435);
             btnHold2.Name = "btnHold2";
             btnHold2.Size = new Size(75, 34);
             btnHold2.TabIndex = 4;
@@ -330,7 +331,7 @@
             btnDeal.BackColor = Color.YellowGreen;
             btnDeal.FlatStyle = FlatStyle.Popup;
             btnDeal.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnDeal.Location = new Point(402, 511);
+            btnDeal.Location = new Point(401, 510);
             btnDeal.Name = "btnDeal";
             btnDeal.Size = new Size(126, 63);
             btnDeal.TabIndex = 2;
@@ -344,7 +345,7 @@
             btnHold4.BackColor = Color.LightBlue;
             btnHold4.FlatStyle = FlatStyle.Popup;
             btnHold4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold4.Location = new Point(599, 436);
+            btnHold4.Location = new Point(598, 435);
             btnHold4.Name = "btnHold4";
             btnHold4.Size = new Size(75, 34);
             btnHold4.TabIndex = 6;
@@ -358,7 +359,7 @@
             btnHold5.BackColor = Color.LightBlue;
             btnHold5.FlatStyle = FlatStyle.Popup;
             btnHold5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
-            btnHold5.Location = new Point(773, 436);
+            btnHold5.Location = new Point(772, 435);
             btnHold5.Name = "btnHold5";
             btnHold5.Size = new Size(75, 34);
             btnHold5.TabIndex = 7;
@@ -369,9 +370,9 @@
             // statusStrip1
             // 
             statusStrip1.Items.AddRange(new ToolStripItem[] { toolStripStatusLabel1 });
-            statusStrip1.Location = new Point(0, 599);
+            statusStrip1.Location = new Point(0, 597);
             statusStrip1.Name = "statusStrip1";
-            statusStrip1.Size = new Size(935, 22);
+            statusStrip1.Size = new Size(933, 22);
             statusStrip1.TabIndex = 0;
             statusStrip1.Text = "statusStrip1";
             // 

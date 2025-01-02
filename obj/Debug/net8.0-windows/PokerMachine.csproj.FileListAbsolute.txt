@@ -30,7 +30,6 @@ C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Ca
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\6_diamond.png
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\6_heart.png
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\6_spades.png
-C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\7.heart.png
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\7_club.png
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\7_diamond.png
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\7_spades.png
@@ -68,3 +67,4 @@ C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\obj\Debug\net8.0-windows\refint\Po
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\obj\Debug\net8.0-windows\PokerMachine.pdb
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\obj\Debug\net8.0-windows\PokerMachine.genruntimeconfig.cache
 C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\obj\Debug\net8.0-windows\ref\PokerMachine.dll
+C:\HjemmeKode\C-Sharp\MyProjects\PokerMachine\bin\Debug\net8.0-windows\Images\Cards\7_heart.png
