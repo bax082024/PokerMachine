@@ -76,37 +76,42 @@ namespace PokerMachine
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
-                deck = new Deck(); // Create a new deck
-                deck.Shuffle(); // Shuffle the deck
-                currentHand = DealCards(deck); // Deal 5 cards
-                DisplayHand(currentHand); // Show cards in PictureBoxes
+                deck = new Deck();
+                deck.Shuffle();
+                currentHand = DealCards(deck);
+                DisplayHand(currentHand);
 
-                isFirstTurn = false; // Move to second turn
-                btnDeal.Text = "Draw"; // Update button text
+                isFirstTurn = false;
+                btnDeal.Text = "Draw";
             }
             else
             {
                 // Second Turn: Replace unheld cards
                 for (int i = 0; i < currentHand.Count; i++)
                 {
-                    if (!holdFlags[i]) // Replace only if not held
+                    if (!holdFlags[i])
                     {
                         currentHand[i] = deck.Draw();
                     }
                 }
-                DisplayHand(currentHand); // Show updated cards
+                DisplayHand(currentHand);
 
-                // Evaluate the hand and display results
+                // Evaluate the hand and calculate the payout
                 string result = EvaluateHand(currentHand);
                 lblResult.Text = result;
+
+                int payout = CalculatePayout(result, currentBet);
+                balance += payout;
+                lblBalance.Text = $"Balance: ${balance}";
 
                 // Reset for the next round
                 isFirstTurn = true;
                 btnDeal.Text = "Deal";
-                Array.Fill(holdFlags, false); // Reset hold flags
-                ResetHoldButtons(); // Reset hold button appearance
+                Array.Fill(holdFlags, false);
+                ResetHoldButtons();
             }
         }
+
 
 
 
@@ -213,10 +218,15 @@ namespace PokerMachine
             UpdateHoldButtonAppearance(btnHold5, false);
         }
 
-
-
-
-
+        private void btnPaytable_Click(object sender, EventArgs e)
+        {
+            string paytableText = "Paytable:\n\n";
+            foreach (var entry in paytable)
+            {
+                paytableText += $"{entry.Key}: {entry.Value}x\n";
+            }
+            MessageBox.Show(paytableText, "Paytable", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
 
     }
 

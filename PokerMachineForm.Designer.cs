@@ -47,6 +47,7 @@
             pictureBox1 = new PictureBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            btnPaytable = new Button();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
@@ -60,6 +61,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(btnPaytable);
             panel1.Controls.Add(lblResult);
             panel1.Controls.Add(lblBalance);
             panel1.Controls.Add(lblBet);
@@ -282,6 +284,16 @@
             toolStripStatusLabel1.Size = new Size(74, 17);
             toolStripStatusLabel1.Text = "Bax Creation";
             // 
+            // btnPaytable
+            // 
+            btnPaytable.Location = new Point(830, 551);
+            btnPaytable.Name = "btnPaytable";
+            btnPaytable.Size = new Size(75, 23);
+            btnPaytable.TabIndex = 12;
+            btnPaytable.Text = "button1";
+            btnPaytable.UseVisualStyleBackColor = true;
+            btnPaytable.Click += btnPaytable_Click;
+            // 
             // PokerMachineForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -326,5 +338,6 @@
         private Label lblBet;
         private Label lblBalance;
         private Label lblResult;
+        private Button btnPaytable;
     }
 }
