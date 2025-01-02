@@ -76,7 +76,14 @@ namespace PokerMachine
 
             if (isFirstTurn)
             {
-                // First Turn: Deal cards
+                // Check if the player has enough credits to place the bet
+                if (currentBet > balance)
+                {
+                    MessageBox.Show("You don't have enough credits to place this bet.", "Insufficient Credits", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Prevent further execution if the bet is too high
+                }
+
+                // First Turn: Deduct credits and deal cards
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
@@ -86,7 +93,7 @@ namespace PokerMachine
                 DisplayHand(currentHand);
 
                 isFirstTurn = false;
-                btnDeal.Text = "Draw";
+                btnDeal.Text = "Draw"; // Change button text to "Draw"
             }
             else
             {
@@ -114,17 +121,18 @@ namespace PokerMachine
                     lblResult.Text = $"{result}. Better luck next time!";
                 }
 
-                // Update balance and reset for the next round
+                // Update balance with winnings
                 balance += payout;
                 lblBalance.Text = $"Balance: ${balance}";
 
+                // Reset for the next round
                 isFirstTurn = true;
-                btnDeal.Text = "Deal";
-                Array.Fill(holdFlags, false);
-                ResetHoldButtons();
+                btnDeal.Text = "Deal"; // Reset button text
+                Array.Fill(holdFlags, false); // Reset hold flags
+                ResetHoldButtons(); // Reset button appearance
             }
-
         }
+
 
 
 
@@ -325,7 +333,7 @@ namespace PokerMachine
             using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
                 this.ClientRectangle,
                 Color.Gray,  // Top color
-                Color.Black,        // Bottom color
+                Color.DimGray,        // Bottom color
                 LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);

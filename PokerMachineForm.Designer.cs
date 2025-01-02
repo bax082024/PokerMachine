@@ -30,9 +30,6 @@
         {
             panel1 = new Panel();
             numericUpDownBet = new NumericUpDown();
-            pictureBox10 = new PictureBox();
-            pictureBox9 = new PictureBox();
-            pictureBox8 = new PictureBox();
             pictureBox7 = new PictureBox();
             pictureBox6 = new PictureBox();
             lblTitle = new Label();
@@ -56,9 +53,6 @@
             toolStripStatusLabel1 = new ToolStripStatusLabel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBet).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel2.SuspendLayout();
@@ -74,9 +68,6 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.Controls.Add(numericUpDownBet);
-            panel1.Controls.Add(pictureBox10);
-            panel1.Controls.Add(pictureBox9);
-            panel1.Controls.Add(pictureBox8);
             panel1.Controls.Add(pictureBox7);
             panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(lblTitle);
@@ -106,41 +97,11 @@
             numericUpDownBet.Value = new decimal(new int[] { 1, 0, 0, 0 });
             numericUpDownBet.ValueChanged += numericUpDown1_ValueChanged;
             // 
-            // pictureBox10
-            // 
-            pictureBox10.BackgroundImage = Properties.Resources.chip1;
-            pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox10.Location = new Point(687, 474);
-            pictureBox10.Name = "pictureBox10";
-            pictureBox10.Size = new Size(54, 49);
-            pictureBox10.TabIndex = 18;
-            pictureBox10.TabStop = false;
-            // 
-            // pictureBox9
-            // 
-            pictureBox9.BackgroundImage = Properties.Resources.chip3;
-            pictureBox9.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox9.Location = new Point(179, 34);
-            pictureBox9.Name = "pictureBox9";
-            pictureBox9.Size = new Size(54, 49);
-            pictureBox9.TabIndex = 17;
-            pictureBox9.TabStop = false;
-            // 
-            // pictureBox8
-            // 
-            pictureBox8.BackgroundImage = Properties.Resources.chip2;
-            pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox8.Location = new Point(663, 34);
-            pictureBox8.Name = "pictureBox8";
-            pictureBox8.Size = new Size(54, 49);
-            pictureBox8.TabIndex = 16;
-            pictureBox8.TabStop = false;
-            // 
             // pictureBox7
             // 
             pictureBox7.BackgroundImage = Properties.Resources.poker_cards;
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox7.Location = new Point(0, 34);
+            pictureBox7.Location = new Point(184, 34);
             pictureBox7.Name = "pictureBox7";
             pictureBox7.Size = new Size(54, 49);
             pictureBox7.TabIndex = 15;
@@ -151,7 +112,7 @@
             // 
             pictureBox6.BackgroundImage = Properties.Resources.poker_cards;
             pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
-            pictureBox6.Location = new Point(876, 34);
+            pictureBox6.Location = new Point(651, 34);
             pictureBox6.Name = "pictureBox6";
             pictureBox6.Size = new Size(54, 49);
             pictureBox6.TabIndex = 14;
@@ -303,7 +264,7 @@
             // 
             // btnHold3
             // 
-            btnHold3.BackColor = Color.DarkGray;
+            btnHold3.BackColor = Color.LightBlue;
             btnHold3.FlatStyle = FlatStyle.Popup;
             btnHold3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHold3.Location = new Point(405, 290);
@@ -316,7 +277,7 @@
             // 
             // btnHold1
             // 
-            btnHold1.BackColor = Color.DarkGray;
+            btnHold1.BackColor = Color.LightBlue;
             btnHold1.FlatStyle = FlatStyle.Popup;
             btnHold1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHold1.Location = new Point(53, 290);
@@ -329,7 +290,7 @@
             // 
             // btnHold2
             // 
-            btnHold2.BackColor = Color.DarkGray;
+            btnHold2.BackColor = Color.LightBlue;
             btnHold2.FlatStyle = FlatStyle.Popup;
             btnHold2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHold2.Location = new Point(228, 290);
@@ -342,7 +303,7 @@
             // 
             // btnHold4
             // 
-            btnHold4.BackColor = Color.DarkGray;
+            btnHold4.BackColor = Color.LightBlue;
             btnHold4.FlatStyle = FlatStyle.Popup;
             btnHold4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHold4.Location = new Point(576, 290);
@@ -355,7 +316,7 @@
             // 
             // btnHold5
             // 
-            btnHold5.BackColor = Color.DarkGray;
+            btnHold5.BackColor = Color.LightBlue;
             btnHold5.FlatStyle = FlatStyle.Popup;
             btnHold5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnHold5.Location = new Point(750, 290);
@@ -394,9 +355,6 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBet).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
-            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel2.ResumeLayout(false);
@@ -434,9 +392,6 @@
         private Label lblTitle;
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
-        private PictureBox pictureBox9;
-        private PictureBox pictureBox8;
-        private PictureBox pictureBox10;
         private NumericUpDown numericUpDownBet;
     }
 }
