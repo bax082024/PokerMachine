@@ -95,12 +95,15 @@
             // 
             // btnPaytable
             // 
+            btnPaytable.BackColor = Color.Sienna;
+            btnPaytable.FlatStyle = FlatStyle.Popup;
+            btnPaytable.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnPaytable.Location = new Point(830, 551);
             btnPaytable.Name = "btnPaytable";
             btnPaytable.Size = new Size(75, 23);
             btnPaytable.TabIndex = 12;
-            btnPaytable.Text = "button1";
-            btnPaytable.UseVisualStyleBackColor = true;
+            btnPaytable.Text = "Paytable";
+            btnPaytable.UseVisualStyleBackColor = false;
             btnPaytable.Click += btnPaytable_Click;
             // 
             // lblResult
@@ -118,7 +121,7 @@
             // 
             lblBalance.AutoSize = true;
             lblBalance.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBalance.ForeColor = Color.DarkSlateGray;
+            lblBalance.ForeColor = Color.DarkGray;
             lblBalance.Location = new Point(419, 485);
             lblBalance.Name = "lblBalance";
             lblBalance.Size = new Size(84, 17);
@@ -129,7 +132,7 @@
             // 
             lblBet.AutoSize = true;
             lblBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBet.ForeColor = Color.DarkSlateGray;
+            lblBet.ForeColor = Color.DarkGray;
             lblBet.Location = new Point(255, 485);
             lblBet.Name = "lblBet";
             lblBet.Size = new Size(40, 17);
@@ -138,10 +141,10 @@
             // 
             // btnBet
             // 
-            btnBet.BackColor = Color.Gray;
+            btnBet.BackColor = Color.SaddleBrown;
             btnBet.FlatStyle = FlatStyle.Popup;
             btnBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            btnBet.Location = new Point(251, 511);
+            btnBet.Location = new Point(235, 511);
             btnBet.Name = "btnBet";
             btnBet.Size = new Size(75, 28);
             btnBet.TabIndex = 8;
@@ -215,7 +218,7 @@
             // 
             // btnDeal
             // 
-            btnDeal.BackColor = Color.OliveDrab;
+            btnDeal.BackColor = Color.YellowGreen;
             btnDeal.FlatStyle = FlatStyle.Popup;
             btnDeal.Font = new Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, 0);
             btnDeal.Location = new Point(402, 511);
@@ -228,7 +231,7 @@
             // 
             // panel2
             // 
-            panel2.BackColor = Color.Gray;
+            panel2.BackColor = Color.DimGray;
             panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(pictureBox5);
             panel2.Controls.Add(pictureBox4);
@@ -314,7 +317,7 @@
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DarkGray;
+            BackColor = Color.DimGray;
             ClientSize = new Size(930, 621);
             Controls.Add(panel1);
             Name = "PokerMachineForm";
