@@ -350,6 +350,29 @@ namespace PokerMachine
             currentBet = (int)numericUpDownBet.Value;
             lblBet.Text = $"Bet: ${currentBet}";
         }
+
+        private void PopulatePaytable()
+        {
+            // Add headers
+            paytableLayout.Controls.Add(new Label { Text = "Hand Type", AutoSize = true, Font = new Font("Arial", 10, FontStyle.Bold) }, 0, 0);
+            paytableLayout.Controls.Add(new Label { Text = "Payout", AutoSize = true, Font = new Font("Arial", 10, FontStyle.Bold) }, 1, 0);
+
+            // Add rows for each paytable entry
+            int rowIndex = 1; // Start after the header row
+            foreach (var entry in paytable)
+            {
+                // Add hand type
+                paytableLayout.Controls.Add(new Label { Text = entry.Key, AutoSize = true, Font = new Font("Arial", 9) }, 0, rowIndex);
+
+                // Add payout
+                paytableLayout.Controls.Add(new Label { Text = entry.Value.ToString(), AutoSize = true, Font = new Font("Arial", 9) }, 1, rowIndex);
+
+                rowIndex++;
+            }
+        }
+
+
+
     }
 
 
