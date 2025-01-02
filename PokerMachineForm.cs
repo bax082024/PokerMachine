@@ -72,6 +72,8 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
+            lblResult.Text = "Good luck!";
+
             if (isFirstTurn)
             {
                 // First Turn: Deal cards
@@ -215,7 +217,7 @@ namespace PokerMachine
             }
             else
             {
-                button.BackColor = SystemColors.Control; // Reset to default
+                button.BackColor = Color.DarkGray;
                 button.Text = "Hold";
             }
         }
@@ -322,18 +324,18 @@ namespace PokerMachine
         {
             using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
                 this.ClientRectangle,
-                Color.Black,  // Top color
-                Color.DimGray,        // Bottom color
+                Color.DarkGoldenrod,  // Top color
+                Color.DarkRed,        // Bottom color
                 LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
             }
         }
 
+        private void pictureBox7_Click(object sender, EventArgs e)
+        {
 
-
-
-
+        }
     }
 
 
