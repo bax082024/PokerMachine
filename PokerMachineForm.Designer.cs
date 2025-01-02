@@ -38,7 +38,11 @@
             pictureBox4 = new PictureBox();
             pictureBox5 = new PictureBox();
             btnDeal = new Button();
-            button2 = new Button();
+            btnHold1 = new Button();
+            btnHold2 = new Button();
+            btnHold3 = new Button();
+            btnHold4 = new Button();
+            btnHold5 = new Button();
             panel1.SuspendLayout();
             statusStrip1.SuspendLayout();
             panel2.SuspendLayout();
@@ -52,7 +56,11 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(button2);
+            panel1.Controls.Add(btnHold5);
+            panel1.Controls.Add(btnHold4);
+            panel1.Controls.Add(btnHold3);
+            panel1.Controls.Add(btnHold2);
+            panel1.Controls.Add(btnHold1);
             panel1.Controls.Add(btnDeal);
             panel1.Controls.Add(panel2);
             panel1.Controls.Add(statusStrip1);
@@ -153,14 +161,65 @@
             btnDeal.Text = "Deal";
             btnDeal.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnHold1
             // 
-            button2.Location = new Point(294, 411);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 3;
-            button2.Text = "button2";
-            button2.UseVisualStyleBackColor = true;
+            btnHold1.BackColor = Color.LightBlue;
+            btnHold1.FlatStyle = FlatStyle.Popup;
+            btnHold1.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHold1.Location = new Point(76, 411);
+            btnHold1.Name = "btnHold1";
+            btnHold1.Size = new Size(75, 34);
+            btnHold1.TabIndex = 3;
+            btnHold1.Text = "Hold";
+            btnHold1.UseVisualStyleBackColor = false;
+            // 
+            // btnHold2
+            // 
+            btnHold2.BackColor = Color.LightBlue;
+            btnHold2.FlatStyle = FlatStyle.Popup;
+            btnHold2.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHold2.Location = new Point(251, 411);
+            btnHold2.Name = "btnHold2";
+            btnHold2.Size = new Size(75, 34);
+            btnHold2.TabIndex = 4;
+            btnHold2.Text = "Hold";
+            btnHold2.UseVisualStyleBackColor = false;
+            // 
+            // btnHold3
+            // 
+            btnHold3.BackColor = Color.LightBlue;
+            btnHold3.FlatStyle = FlatStyle.Popup;
+            btnHold3.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHold3.Location = new Point(428, 411);
+            btnHold3.Name = "btnHold3";
+            btnHold3.Size = new Size(75, 34);
+            btnHold3.TabIndex = 5;
+            btnHold3.Text = "Hold";
+            btnHold3.UseVisualStyleBackColor = false;
+            // 
+            // btnHold4
+            // 
+            btnHold4.BackColor = Color.LightBlue;
+            btnHold4.FlatStyle = FlatStyle.Popup;
+            btnHold4.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHold4.Location = new Point(599, 411);
+            btnHold4.Name = "btnHold4";
+            btnHold4.Size = new Size(75, 34);
+            btnHold4.TabIndex = 6;
+            btnHold4.Text = "Hold";
+            btnHold4.UseVisualStyleBackColor = false;
+            // 
+            // btnHold5
+            // 
+            btnHold5.BackColor = Color.LightBlue;
+            btnHold5.FlatStyle = FlatStyle.Popup;
+            btnHold5.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnHold5.Location = new Point(773, 411);
+            btnHold5.Name = "btnHold5";
+            btnHold5.Size = new Size(75, 34);
+            btnHold5.TabIndex = 7;
+            btnHold5.Text = "Hold";
+            btnHold5.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
@@ -196,7 +255,11 @@
         private PictureBox pictureBox3;
         private PictureBox pictureBox2;
         private PictureBox pictureBox1;
-        private Button button2;
+        private Button btnHold1;
         private Button btnDeal;
+        private Button btnHold5;
+        private Button btnHold4;
+        private Button btnHold3;
+        private Button btnHold2;
     }
 }
