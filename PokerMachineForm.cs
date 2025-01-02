@@ -6,6 +6,11 @@ namespace PokerMachine
         private int currentBet = 10;
 
         private bool[] holdFlags = new bool[5];
+        private List<Card> currentHand;
+        private Deck deck;
+
+
+        private bool isFirstTurn = true;
 
 
         public PokerMachineForm()
@@ -51,34 +56,45 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
-            if (balance >= currentBet)
+            if (isFirstTurn)
             {
-                // Deduct the current bet from the balance
+                // First Turn: Deal cards
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
-                // Create a new deck and shuffle
-                Deck deck = new Deck();
-                deck.Shuffle();
+                deck = new Deck(); // Create a new deck
+                deck.Shuffle(); // Shuffle the deck
+                currentHand = DealCards(deck); // Deal 5 cards
+                DisplayHand(currentHand); // Show cards in PictureBoxes
 
-                // Deal 5 cards
-                List<Card> hand = DealCards(deck);
-
-                // Display the dealt cards in the PictureBoxes
-                DisplayHand(hand);
-
-                // Evaluate the hand
-                string result = EvaluateHand(hand);
-
-                // Display the result on the label
-                lblResult.Text = result;
+                isFirstTurn = false; // Move to second turn
+                btnDeal.Text = "Draw"; // Update button text
             }
             else
             {
-                // Not enough balance
-                MessageBox.Show("Not enough balance to place a bet!");
+                // Second Turn: Replace unheld cards
+                for (int i = 0; i < currentHand.Count; i++)
+                {
+                    if (!holdFlags[i]) // Replace only if not held
+                    {
+                        currentHand[i] = deck.Draw();
+                    }
+                }
+                DisplayHand(currentHand); // Show updated cards
+
+                // Evaluate the hand and display results
+                string result = EvaluateHand(currentHand);
+                lblResult.Text = result;
+
+                // Reset for the next round
+                isFirstTurn = true;
+                btnDeal.Text = "Deal";
+                Array.Fill(holdFlags, false); // Reset hold flags
+                ResetHoldButtons(); // Reset hold button appearance
             }
         }
+
+
 
 
         private string EvaluateHand(List<Card> hand)
@@ -93,36 +109,56 @@ namespace PokerMachine
 
         private void btnHold1_Click(object sender, EventArgs e)
         {
-            holdFlags[0] = !holdFlags[0];
-            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+            ToggleHold(0, btnHold1);
         }
 
         private void btnHold2_Click(object sender, EventArgs e)
         {
-            holdFlags[0] = !holdFlags[0];
-            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+            ToggleHold(1, btnHold2);
         }
 
         private void btnHold3_Click(object sender, EventArgs e)
         {
-            holdFlags[0] = !holdFlags[0];
-            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+            ToggleHold(2, btnHold3);
         }
 
         private void btnHold4_Click(object sender, EventArgs e)
         {
-            holdFlags[0] = !holdFlags[0];
-            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+            ToggleHold(3, btnHold4);
         }
 
         private void btnHold5_Click(object sender, EventArgs e)
         {
-            holdFlags[0] = !holdFlags[0];
-            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+            ToggleHold(4, btnHold5);
         }
-    }
 
-    private void UpdateHoldButtonAppearance(Button button, bool isHeld)
+        private void ToggleHold(int index, Button button)
+        {
+            if (index < 0 || index >= holdFlags.Length)
+            {
+                MessageBox.Show("Invalid hold index!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            // Toggle the hold state
+            holdFlags[index] = !holdFlags[index];
+
+            // Update the button appearance
+            if (holdFlags[index])
+            {
+                button.BackColor = Color.LightGreen; // Indicate held state
+                button.Text = "Held";
+            }
+            else
+            {
+                button.BackColor = SystemColors.Control; // Reset to default
+                button.Text = "Hold";
+            }
+        }
+
+
+
+        private void UpdateHoldButtonAppearance(Button button, bool isHeld)
         {
             if (isHeld)
             {
@@ -136,4 +172,21 @@ namespace PokerMachine
             }
         }
 
+
+        private void ResetHoldButtons()
+        {
+            UpdateHoldButtonAppearance(btnHold1, false);
+            UpdateHoldButtonAppearance(btnHold2, false);
+            UpdateHoldButtonAppearance(btnHold3, false);
+            UpdateHoldButtonAppearance(btnHold4, false);
+            UpdateHoldButtonAppearance(btnHold5, false);
+        }
+
+
+
+
+
+
     }
+
+}
