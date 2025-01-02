@@ -13,7 +13,15 @@ namespace PokerMachine
             return Image.FromFile(imagePath);
         }
 
-
+        private List<Card> DealCards(Deck deck)
+        {
+            List<Card> hand = new List<Card>();
+            for (int i = 0; i < 5; i++)
+            {
+                hand.Add(deck.Draw());
+            }
+            return hand;
+        }
 
     }
 }
