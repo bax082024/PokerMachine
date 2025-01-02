@@ -29,6 +29,10 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            panelRight = new Panel();
+            rightPaytable = new Panel();
+            panelLeft = new Panel();
+            leftPaytable = new Panel();
             pictureBox5 = new PictureBox();
             numericUpDownBet = new NumericUpDown();
             pictureBox4 = new PictureBox();
@@ -50,7 +54,6 @@
             btnHold5 = new Button();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
-            paytableLayout = new TableLayoutPanel();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)numericUpDownBet).BeginInit();
@@ -66,7 +69,10 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(paytableLayout);
+            panel1.Controls.Add(panelRight);
+            panel1.Controls.Add(rightPaytable);
+            panel1.Controls.Add(panelLeft);
+            panel1.Controls.Add(leftPaytable);
             panel1.Controls.Add(pictureBox5);
             panel1.Controls.Add(numericUpDownBet);
             panel1.Controls.Add(pictureBox4);
@@ -92,6 +98,42 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(935, 621);
             panel1.TabIndex = 0;
+            // 
+            // panelRight
+            // 
+            panelRight.BackColor = Color.Tomato;
+            panelRight.BorderStyle = BorderStyle.FixedSingle;
+            panelRight.Location = new Point(650, 66);
+            panelRight.Name = "panelRight";
+            panelRight.Size = new Size(89, 113);
+            panelRight.TabIndex = 23;
+            // 
+            // rightPaytable
+            // 
+            rightPaytable.BackColor = Color.DarkBlue;
+            rightPaytable.BorderStyle = BorderStyle.FixedSingle;
+            rightPaytable.Location = new Point(453, 66);
+            rightPaytable.Name = "rightPaytable";
+            rightPaytable.Size = new Size(200, 113);
+            rightPaytable.TabIndex = 22;
+            // 
+            // panelLeft
+            // 
+            panelLeft.BackColor = Color.Tomato;
+            panelLeft.BorderStyle = BorderStyle.FixedSingle;
+            panelLeft.Location = new Point(299, 66);
+            panelLeft.Name = "panelLeft";
+            panelLeft.Size = new Size(89, 113);
+            panelLeft.TabIndex = 21;
+            // 
+            // leftPaytable
+            // 
+            leftPaytable.BackColor = Color.DarkBlue;
+            leftPaytable.BorderStyle = BorderStyle.FixedSingle;
+            leftPaytable.Location = new Point(102, 66);
+            leftPaytable.Name = "leftPaytable";
+            leftPaytable.Size = new Size(200, 113);
+            leftPaytable.TabIndex = 20;
             // 
             // pictureBox5
             // 
@@ -332,20 +374,6 @@
             toolStripStatusLabel1.Size = new Size(74, 17);
             toolStripStatusLabel1.Text = "Bax Creation";
             // 
-            // paytableLayout
-            // 
-            paytableLayout.AutoSize = true;
-            paytableLayout.CellBorderStyle = TableLayoutPanelCellBorderStyle.Single;
-            paytableLayout.ColumnCount = 2;
-            paytableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 65F));
-            paytableLayout.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 35F));
-            paytableLayout.Location = new Point(58, 66);
-            paytableLayout.Name = "paytableLayout";
-            paytableLayout.RowCount = 1;
-            paytableLayout.RowStyles.Add(new RowStyle(SizeType.Percent, 100F));
-            paytableLayout.Size = new Size(268, 112);
-            paytableLayout.TabIndex = 20;
-            // 
             // PokerMachineForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -395,6 +423,9 @@
         private PictureBox pictureBox7;
         private PictureBox pictureBox6;
         private NumericUpDown numericUpDownBet;
-        private TableLayoutPanel paytableLayout;
+        private Panel panelLeft;
+        private Panel leftPaytable;
+        private Panel panelRight;
+        private Panel rightPaytable;
     }
 }

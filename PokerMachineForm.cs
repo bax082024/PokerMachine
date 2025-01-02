@@ -352,25 +352,69 @@ namespace PokerMachine
             lblBet.Text = $"Bet: ${currentBet}";
         }
 
-        private void PopulatePaytable()
+        private void PopulatePaytablePanels()
         {
-            // Add headers
-            paytableLayout.Controls.Add(new Label { Text = "Hand Type", AutoSize = true, Font = new Font("Arial", 10, FontStyle.Bold) }, 0, 0);
-            paytableLayout.Controls.Add(new Label { Text = "Payout", AutoSize = true, Font = new Font("Arial", 10, FontStyle.Bold) }, 1, 0);
-
-            // Add rows for each paytable entry
-            int rowIndex = 1; // Start after the header row
-            foreach (var entry in paytable)
+            // Populate the left panel
+            int row = 0;
+            foreach (var entry in leftPaytable)
             {
-                // Add hand type
-                paytableLayout.Controls.Add(new Label { Text = entry.Key, AutoSize = true, Font = new Font("Arial", 9) }, 0, rowIndex);
+                // Add Hand Type
+                var handTypeLabel = new Label
+                {
+                    Text = entry.Key,
+                    AutoSize = true,
+                    ForeColor = Color.White,
+                    Font = new Font("Arial", 9),
+                    Location = new Point(10, row * 20)
+                };
+                panelLeft.Controls.Add(handTypeLabel);
 
-                // Add payout
-                paytableLayout.Controls.Add(new Label { Text = entry.Value.ToString(), AutoSize = true, Font = new Font("Arial", 9) }, 1, rowIndex);
+                // Add Payout
+                var payoutLabel = new Label
+                {
+                    Text = entry.Value.ToString(),
+                    AutoSize = true,
+                    ForeColor = Color.Red,
+                    Font = new Font("Arial", 9),
+                    Location = new Point(150, row * 20)
+                };
+                panelLeft.Controls.Add(payoutLabel);
 
-                rowIndex++;
+                row++;
+            }
+
+            // Populate the right panel
+            row = 0;
+            foreach (var entry in rightPaytable)
+            {
+                // Add Hand Type
+                var handTypeLabel = new Label
+                {
+                    Text = entry.Key,
+                    AutoSize = true,
+                    ForeColor = Color.White,
+                    Font = new Font("Arial", 9),
+                    Location = new Point(10, row * 20)
+                };
+                panelRight.Controls.Add(handTypeLabel);
+
+                // Add Payout
+                var payoutLabel = new Label
+                {
+                    Text = entry.Value.ToString(),
+                    AutoSize = true,
+                    ForeColor = Color.Red,
+                    Font = new Font("Arial", 9),
+                    Location = new Point(150, row * 20)
+                };
+                panelRight.Controls.Add(payoutLabel);
+
+                row++;
             }
         }
+
+
+
 
 
 
