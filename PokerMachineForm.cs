@@ -2,6 +2,10 @@ namespace PokerMachine
 {
     public partial class Form1 : Form
     {
+        private int balance = 100;
+        private int currentBet = 10;
+
+
         public Form1()
         {
             InitializeComponent();
