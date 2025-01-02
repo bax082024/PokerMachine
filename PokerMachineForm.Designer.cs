@@ -101,6 +101,7 @@
             // 
             // panelExtraRight
             // 
+            panelExtraRight.Anchor = AnchorStyles.None;
             panelExtraRight.BackColor = Color.Tomato;
             panelExtraRight.BorderStyle = BorderStyle.FixedSingle;
             panelExtraRight.Location = new Point(650, 66);
@@ -110,6 +111,7 @@
             // 
             // panelRightPaytable
             // 
+            panelRightPaytable.Anchor = AnchorStyles.None;
             panelRightPaytable.BackColor = Color.DarkBlue;
             panelRightPaytable.BorderStyle = BorderStyle.FixedSingle;
             panelRightPaytable.Location = new Point(453, 66);
@@ -119,6 +121,7 @@
             // 
             // panelExtraLeft
             // 
+            panelExtraLeft.Anchor = AnchorStyles.None;
             panelExtraLeft.BackColor = Color.Tomato;
             panelExtraLeft.BorderStyle = BorderStyle.FixedSingle;
             panelExtraLeft.Location = new Point(299, 66);
@@ -128,6 +131,7 @@
             // 
             // panelLeftPaytable
             // 
+            panelLeftPaytable.Anchor = AnchorStyles.None;
             panelLeftPaytable.BackColor = Color.DarkBlue;
             panelLeftPaytable.BorderStyle = BorderStyle.FixedSingle;
             panelLeftPaytable.Location = new Point(102, 66);
@@ -137,6 +141,7 @@
             // 
             // pictureBox5
             // 
+            pictureBox5.Anchor = AnchorStyles.None;
             pictureBox5.BackColor = Color.LightGray;
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
@@ -148,6 +153,7 @@
             // 
             // numericUpDownBet
             // 
+            numericUpDownBet.Anchor = AnchorStyles.None;
             numericUpDownBet.BackColor = SystemColors.Info;
             numericUpDownBet.Font = new Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, 0);
             numericUpDownBet.Location = new Point(249, 533);
@@ -161,6 +167,7 @@
             // 
             // pictureBox4
             // 
+            pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.BackColor = Color.LightGray;
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
@@ -172,6 +179,7 @@
             // 
             // pictureBox7
             // 
+            pictureBox7.Anchor = AnchorStyles.None;
             pictureBox7.BackgroundImage = Properties.Resources.poker_cards;
             pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox7.Location = new Point(186, 11);
@@ -183,6 +191,7 @@
             // 
             // pictureBox3
             // 
+            pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.LightGray;
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
@@ -194,6 +203,7 @@
             // 
             // pictureBox6
             // 
+            pictureBox6.Anchor = AnchorStyles.None;
             pictureBox6.BackgroundImage = Properties.Resources.poker_cards;
             pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox6.Location = new Point(653, 11);
@@ -204,6 +214,7 @@
             // 
             // pictureBox2
             // 
+            pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.LightGray;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
@@ -215,6 +226,7 @@
             // 
             // lblTitle
             // 
+            lblTitle.Anchor = AnchorStyles.None;
             lblTitle.AutoSize = true;
             lblTitle.Font = new Font("Showcard Gothic", 36F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblTitle.ForeColor = Color.Goldenrod;
@@ -226,6 +238,7 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.LightGray;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
@@ -237,6 +250,7 @@
             // 
             // lblResult
             // 
+            lblResult.Anchor = AnchorStyles.None;
             lblResult.AutoSize = true;
             lblResult.Font = new Font("Segoe UI", 15.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblResult.ForeColor = Color.Goldenrod;
@@ -248,6 +262,7 @@
             // 
             // btnPaytable
             // 
+            btnPaytable.Anchor = AnchorStyles.None;
             btnPaytable.BackColor = Color.Sienna;
             btnPaytable.FlatStyle = FlatStyle.Popup;
             btnPaytable.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -261,6 +276,7 @@
             // 
             // btnHold3
             // 
+            btnHold3.Anchor = AnchorStyles.None;
             btnHold3.BackColor = Color.LightBlue;
             btnHold3.FlatStyle = FlatStyle.Popup;
             btnHold3.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -274,6 +290,7 @@
             // 
             // lblBalance
             // 
+            lblBalance.Anchor = AnchorStyles.None;
             lblBalance.AutoSize = true;
             lblBalance.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBalance.ForeColor = Color.DarkGray;
@@ -285,6 +302,7 @@
             // 
             // btnHold1
             // 
+            btnHold1.Anchor = AnchorStyles.None;
             btnHold1.BackColor = Color.LightBlue;
             btnHold1.FlatStyle = FlatStyle.Popup;
             btnHold1.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -298,6 +316,7 @@
             // 
             // lblBet
             // 
+            lblBet.Anchor = AnchorStyles.None;
             lblBet.AutoSize = true;
             lblBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
             lblBet.ForeColor = Color.DarkGray;
@@ -309,6 +328,7 @@
             // 
             // btnHold2
             // 
+            btnHold2.Anchor = AnchorStyles.None;
             btnHold2.BackColor = Color.LightBlue;
             btnHold2.FlatStyle = FlatStyle.Popup;
             btnHold2.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -322,6 +342,7 @@
             // 
             // btnDeal
             // 
+            btnDeal.Anchor = AnchorStyles.None;
             btnDeal.BackColor = Color.YellowGreen;
             btnDeal.FlatStyle = FlatStyle.Popup;
             btnDeal.Font = new Font("Segoe UI", 18F, FontStyle.Bold, GraphicsUnit.Point, 0);
@@ -335,6 +356,7 @@
             // 
             // btnHold4
             // 
+            btnHold4.Anchor = AnchorStyles.None;
             btnHold4.BackColor = Color.LightBlue;
             btnHold4.FlatStyle = FlatStyle.Popup;
             btnHold4.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
@@ -348,6 +370,7 @@
             // 
             // btnHold5
             // 
+            btnHold5.Anchor = AnchorStyles.None;
             btnHold5.BackColor = Color.LightBlue;
             btnHold5.FlatStyle = FlatStyle.Popup;
             btnHold5.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
