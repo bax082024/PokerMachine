@@ -240,6 +240,11 @@ namespace PokerMachine
             return IsStraight(hand) && IsFlush(hand);
         }
 
+        private bool IsFourOfAKind(List<Card> hand)
+        {
+            return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 4);
+        }
+
 
 
 
