@@ -32,6 +32,12 @@ namespace PokerMachine
             pictureBox5.Image = LoadCardImage(hand[4].Rank, hand[4].Suit);
         }
 
-
+        private void btnDeal_Click(object sender, EventArgs e)
+        {
+            Deck deck = new Deck();
+            deck.Shuffle();
+            List<Card> hand = DealCards(deck);
+            DisplayHand(hand);
+        }
     }
 }
