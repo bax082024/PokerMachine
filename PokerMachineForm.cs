@@ -5,7 +5,7 @@ namespace PokerMachine
     public partial class PokerMachineForm : Form
     {
         private int balance = 100;
-        private int currentBet = 10;
+        private int currentBet = 1;
 
         private bool[] holdFlags = new bool[5];
         private List<Card> currentHand = new List<Card>();
@@ -14,13 +14,17 @@ namespace PokerMachine
 
         private bool isFirstTurn = true;
 
-        private readonly Dictionary<string, int> paytable = new Dictionary<string, int>
+        private readonly Dictionary<string, int> leftPaytableData = new Dictionary<string, int>
         {
             { "Royal Flush", 250 },
             { "Straight Flush", 50 },
             { "Four of a Kind", 25 },
             { "Full House", 9 },
-            { "Flush", 6 },
+            { "Flush", 6 }
+        };
+
+        private readonly Dictionary<string, int> rightPaytableData = new Dictionary<string, int>
+        {
             { "Straight", 4 },
             { "Three of a Kind", 3 },
             { "Two Pair", 2 },
@@ -29,9 +33,11 @@ namespace PokerMachine
 
 
 
+
         public PokerMachineForm()
         {
             InitializeComponent();
+            PopulatePaytablePanels();
 
             lblBalance.Text = $"Balance: ${balance}";
             lblBet.Text = $"Bet: ${currentBet}";
@@ -76,7 +82,14 @@ namespace PokerMachine
 
             if (isFirstTurn)
             {
-                // First Turn: Deal cards
+                // Check if the player has enough credits to place the bet
+                if (currentBet > balance)
+                {
+                    MessageBox.Show("You don't have enough credits to place this bet.", "Insufficient Credits", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return; // Prevent further execution if the bet is too high
+                }
+
+                // First Turn: Deduct credits and deal cards
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
@@ -86,7 +99,7 @@ namespace PokerMachine
                 DisplayHand(currentHand);
 
                 isFirstTurn = false;
-                btnDeal.Text = "Draw";
+                btnDeal.Text = "Draw"; // Change button text to "Draw"
             }
             else
             {
@@ -114,17 +127,18 @@ namespace PokerMachine
                     lblResult.Text = $"{result}. Better luck next time!";
                 }
 
-                // Update balance and reset for the next round
+                // Update balance with winnings
                 balance += payout;
                 lblBalance.Text = $"Balance: ${balance}";
 
+                // Reset for the next round
                 isFirstTurn = true;
-                btnDeal.Text = "Deal";
-                Array.Fill(holdFlags, false);
-                ResetHoldButtons();
+                btnDeal.Text = "Deal"; // Reset button text
+                Array.Fill(holdFlags, false); // Reset hold flags
+                ResetHoldButtons(); // Reset button appearance
             }
-
         }
+
 
 
 
@@ -148,12 +162,18 @@ namespace PokerMachine
 
         private int CalculatePayout(string handType, int betAmount)
         {
-            if (paytable.ContainsKey(handType))
+            if (leftPaytableData.ContainsKey(handType))
             {
-                return paytable[handType] * betAmount;
+                return leftPaytableData[handType] * betAmount;
+            }
+            else if (rightPaytableData.ContainsKey(handType))
+            {
+                return rightPaytableData[handType] * betAmount;
             }
             return 0; // No payout for losing hands
         }
+
+
 
 
 
@@ -235,12 +255,26 @@ namespace PokerMachine
         private void btnPaytable_Click(object sender, EventArgs e)
         {
             string paytableText = "Paytable:\n\n";
-            foreach (var entry in paytable)
+
+            // Iterate through the left paytable
+            foreach (var entry in leftPaytableData)
             {
                 paytableText += $"{entry.Key}: {entry.Value}x\n";
             }
+
+            // Add a divider between the two paytables
+            paytableText += "\n";
+
+            // Iterate through the right paytable
+            foreach (var entry in rightPaytableData)
+            {
+                paytableText += $"{entry.Key}: {entry.Value}x\n";
+            }
+
+            // Display the paytable in a message box
             MessageBox.Show(paytableText, "Paytable", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
 
         // Paytable
 
@@ -320,22 +354,106 @@ namespace PokerMachine
             return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 2 && highCards.Contains(g.Key));
         }
 
-        protected override void OnPaintBackground(PaintEventArgs e)
-        {
-            using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
-                this.ClientRectangle,
-                Color.DarkGoldenrod,  // Top color
-                Color.DarkRed,        // Bottom color
-                LinearGradientMode.Vertical))
-            {
-                e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
-            }
-        }
+        //protected override void OnPaintBackground(PaintEventArgs e)
+        //{
+        //    using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
+        //        this.ClientRectangle,
+        //        Color.Gray,  // Top color
+        //        Color.DimGray,        // Bottom color
+        //        LinearGradientMode.Vertical))
+        //    {
+        //        e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
+        //    }
+        //}
 
         private void pictureBox7_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+            currentBet = (int)numericUpDownBet.Value;
+            lblBet.Text = $"Bet: ${currentBet}";
+        }
+
+        private void PopulatePaytablePanels()
+        {
+            // Clear existing controls in all panels
+            panelLeftPaytable.Controls.Clear();
+            panelExtraLeft.Controls.Clear();
+            panelRightPaytable.Controls.Clear();
+            panelExtraRight.Controls.Clear();
+
+            // Populate the left paytable
+            int row = 0;
+            foreach (var entry in leftPaytableData)
+            {
+                // Add Hand Type (left panel)
+                var handTypeLabel = new Label
+                {
+                    Text = entry.Key,
+                    AutoSize = true,
+                    ForeColor = Color.Gold,
+                    Font = new Font("Arial", 13, FontStyle.Bold),
+                    Location = new Point(10, row * 20)
+                };
+                panelLeftPaytable.Controls.Add(handTypeLabel);
+
+                // Add Payout (left extra panel)
+                var payoutLabel = new Label
+                {
+                    Text = entry.Value.ToString(),
+                    AutoSize = true,
+                    ForeColor = Color.Gold,
+                    Font = new Font("Arial", 13, FontStyle.Bold),
+                    Location = new Point(10, row * 20)
+                };
+                panelExtraLeft.Controls.Add(payoutLabel);
+
+                row++;
+            }
+
+            // Populate the right paytable
+            row = 0;
+            foreach (var entry in rightPaytableData)
+            {
+                // Add Hand Type (right panel)
+                var handTypeLabel = new Label
+                {
+                    Text = entry.Key,
+                    AutoSize = true,
+                    ForeColor = Color.Gold,
+                    Font = new Font("Arial", 13, FontStyle.Bold),
+                    Location = new Point(10, row * 20)
+                };
+                panelRightPaytable.Controls.Add(handTypeLabel);
+
+                // Add Payout (right extra panel)
+                var payoutLabel = new Label
+                {
+                    Text = entry.Value.ToString(),
+                    AutoSize = true,
+                    ForeColor = Color.Gold,
+                    Font = new Font("Arial", 13, FontStyle.Bold),
+                    Location = new Point(10, row * 20)
+                };
+                panelExtraRight.Controls.Add(payoutLabel);
+
+                row++;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
     }
 
 
