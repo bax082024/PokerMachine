@@ -113,13 +113,20 @@ namespace PokerMachine
 
         private string EvaluateHand(List<Card> hand)
         {
-            // Simplified example for a pair
-            var rankGroups = hand.GroupBy(card => card.Rank);
-            if (rankGroups.Any(group => group.Count() == 2))
-                return "Pair!";
+            // Example logic to determine hand type
+            if (IsRoyalFlush(hand)) return "Royal Flush";
+            if (IsStraightFlush(hand)) return "Straight Flush";
+            if (IsFourOfAKind(hand)) return "Four of a Kind";
+            if (IsFullHouse(hand)) return "Full House";
+            if (IsFlush(hand)) return "Flush";
+            if (IsStraight(hand)) return "Straight";
+            if (IsThreeOfAKind(hand)) return "Three of a Kind";
+            if (IsTwoPair(hand)) return "Two Pair";
+            if (IsJacksOrBetter(hand)) return "Jacks or Better";
 
-            return "No Winning Hand!";
+            return "No Winning Hand";
         }
+
 
         private void btnHold1_Click(object sender, EventArgs e)
         {
