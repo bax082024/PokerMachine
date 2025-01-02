@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            pictureBox7 = new PictureBox();
+            pictureBox6 = new PictureBox();
             lblTitle = new Label();
             btnPaytable = new Button();
             lblResult = new Label();
@@ -49,7 +51,12 @@
             pictureBox1 = new PictureBox();
             statusStrip1 = new StatusStrip();
             toolStripStatusLabel1 = new ToolStripStatusLabel();
+            pictureBox8 = new PictureBox();
+            pictureBox9 = new PictureBox();
+            pictureBox10 = new PictureBox();
             panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).BeginInit();
             panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
@@ -57,11 +64,19 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             statusStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).BeginInit();
             SuspendLayout();
             // 
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
+            panel1.Controls.Add(pictureBox10);
+            panel1.Controls.Add(pictureBox9);
+            panel1.Controls.Add(pictureBox8);
+            panel1.Controls.Add(pictureBox7);
+            panel1.Controls.Add(pictureBox6);
             panel1.Controls.Add(lblTitle);
             panel1.Controls.Add(btnPaytable);
             panel1.Controls.Add(lblResult);
@@ -81,6 +96,26 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(930, 621);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox7
+            // 
+            pictureBox7.BackgroundImage = Properties.Resources.poker_cards;
+            pictureBox7.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox7.Location = new Point(0, 113);
+            pictureBox7.Name = "pictureBox7";
+            pictureBox7.Size = new Size(54, 49);
+            pictureBox7.TabIndex = 15;
+            pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            pictureBox6.BackgroundImage = Properties.Resources.poker_cards;
+            pictureBox6.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox6.Location = new Point(873, 113);
+            pictureBox6.Name = "pictureBox6";
+            pictureBox6.Size = new Size(54, 49);
+            pictureBox6.TabIndex = 14;
+            pictureBox6.TabStop = false;
             // 
             // lblTitle
             // 
@@ -313,11 +348,41 @@
             toolStripStatusLabel1.Size = new Size(74, 17);
             toolStripStatusLabel1.Text = "Bax Creation";
             // 
+            // pictureBox8
+            // 
+            pictureBox8.BackgroundImage = Properties.Resources.chip2;
+            pictureBox8.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox8.Location = new Point(663, 34);
+            pictureBox8.Name = "pictureBox8";
+            pictureBox8.Size = new Size(54, 49);
+            pictureBox8.TabIndex = 16;
+            pictureBox8.TabStop = false;
+            // 
+            // pictureBox9
+            // 
+            pictureBox9.BackgroundImage = Properties.Resources.chip3;
+            pictureBox9.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox9.Location = new Point(179, 34);
+            pictureBox9.Name = "pictureBox9";
+            pictureBox9.Size = new Size(54, 49);
+            pictureBox9.TabIndex = 17;
+            pictureBox9.TabStop = false;
+            // 
+            // pictureBox10
+            // 
+            pictureBox10.BackgroundImage = Properties.Resources.chip1;
+            pictureBox10.BackgroundImageLayout = ImageLayout.Stretch;
+            pictureBox10.Location = new Point(687, 474);
+            pictureBox10.Name = "pictureBox10";
+            pictureBox10.Size = new Size(54, 49);
+            pictureBox10.TabIndex = 18;
+            pictureBox10.TabStop = false;
+            // 
             // PokerMachineForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.DimGray;
+            BackColor = Color.DarkCyan;
             ClientSize = new Size(930, 621);
             Controls.Add(panel1);
             Name = "PokerMachineForm";
@@ -325,6 +390,8 @@
             Text = "Poker Machine";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox7).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox6).EndInit();
             panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
@@ -333,6 +400,9 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             statusStrip1.ResumeLayout(false);
             statusStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox8).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox9).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox10).EndInit();
             ResumeLayout(false);
         }
 
@@ -359,5 +429,10 @@
         private Label lblResult;
         private Button btnPaytable;
         private Label lblTitle;
+        private PictureBox pictureBox7;
+        private PictureBox pictureBox6;
+        private PictureBox pictureBox9;
+        private PictureBox pictureBox8;
+        private PictureBox pictureBox10;
     }
 }

@@ -72,6 +72,8 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
+            lblResult.Text = "";
+
             if (isFirstTurn)
             {
                 // First Turn: Deal cards
