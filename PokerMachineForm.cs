@@ -322,8 +322,8 @@ namespace PokerMachine
         {
             using (LinearGradientBrush gradientBrush = new LinearGradientBrush(
                 this.ClientRectangle,
-                Color.Black,  // Top color
-                Color.DimGray,        // Bottom color
+                Color.DarkGoldenrod,  // Top color
+                Color.DarkRed,        // Bottom color
                 LinearGradientMode.Vertical))
             {
                 e.Graphics.FillRectangle(gradientBrush, this.ClientRectangle);
