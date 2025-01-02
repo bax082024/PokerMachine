@@ -32,6 +32,7 @@ namespace PokerMachine
         public PokerMachineForm()
         {
             InitializeComponent();
+            PopulatePaytable();
 
             lblBalance.Text = $"Balance: ${balance}";
             lblBet.Text = $"Bet: ${currentBet}";
