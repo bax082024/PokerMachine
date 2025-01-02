@@ -58,5 +58,16 @@ namespace PokerMachine
             }
         }
 
+        private string EvaluateHand(List<Card> hand)
+        {
+            // Simplified example for a pair
+            var rankGroups = hand.GroupBy(card => card.Rank);
+            if (rankGroups.Any(group => group.Count() == 2))
+                return "Pair!";
+
+            return "No Winning Hand!";
+        }
+
+
     }
 }
