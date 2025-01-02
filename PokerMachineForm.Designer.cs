@@ -142,7 +142,7 @@
             // 
             pictureBox5.Anchor = AnchorStyles.None;
             pictureBox5.BackColor = Color.LightGray;
-            pictureBox5.BackgroundImage = Properties.Resources.cardback;
+            pictureBox5.BackgroundImage = Properties.Resources.cardbackred;
             pictureBox5.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
             pictureBox5.Location = new Point(735, 212);
@@ -169,7 +169,7 @@
             // 
             pictureBox4.Anchor = AnchorStyles.None;
             pictureBox4.BackColor = Color.LightGray;
-            pictureBox4.BackgroundImage = Properties.Resources.cardback;
+            pictureBox4.BackgroundImage = Properties.Resources.cardbackred;
             pictureBox4.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
             pictureBox4.Location = new Point(562, 212);
@@ -194,7 +194,7 @@
             // 
             pictureBox3.Anchor = AnchorStyles.None;
             pictureBox3.BackColor = Color.LightGray;
-            pictureBox3.BackgroundImage = Properties.Resources.cardback;
+            pictureBox3.BackgroundImage = Properties.Resources.cardbackred;
             pictureBox3.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
             pictureBox3.Location = new Point(388, 212);
@@ -218,7 +218,7 @@
             // 
             pictureBox2.Anchor = AnchorStyles.None;
             pictureBox2.BackColor = Color.LightGray;
-            pictureBox2.BackgroundImage = Properties.Resources.cardback;
+            pictureBox2.BackgroundImage = Properties.Resources.cardbackred;
             pictureBox2.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Location = new Point(214, 212);
@@ -243,7 +243,7 @@
             // 
             pictureBox1.Anchor = AnchorStyles.None;
             pictureBox1.BackColor = Color.LightGray;
-            pictureBox1.BackgroundImage = Properties.Resources.cardback;
+            pictureBox1.BackgroundImage = Properties.Resources.cardbackred;
             pictureBox1.BackgroundImageLayout = ImageLayout.Zoom;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(39, 212);
