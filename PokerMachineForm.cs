@@ -127,6 +127,16 @@ namespace PokerMachine
             return "No Winning Hand";
         }
 
+        private int CalculatePayout(string handType, int betAmount)
+        {
+            if (paytable.ContainsKey(handType))
+            {
+                return paytable[handType] * betAmount;
+            }
+            return 0; // No payout for losing hands
+        }
+
+
 
         private void btnHold1_Click(object sender, EventArgs e)
         {
