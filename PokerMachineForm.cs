@@ -1,12 +1,12 @@
 namespace PokerMachine
 {
-    public partial class Form1 : Form
+    public partial class PokerMachineForm : Form
     {
         private int balance = 100;
         private int currentBet = 10;
 
 
-        public Form1()
+        public PokerMachineForm()
         {
             InitializeComponent();
 
@@ -14,11 +14,18 @@ namespace PokerMachine
             lblBet.Text = $"Bet: ${currentBet}";
         }
 
-        private Image LoadCardImage(string rank, string suit)
+        private Image LoadCardImage(string rank, string suit, int width, int height)
         {
+            // Construct the image path
             string imagePath = $"Images/Cards/{rank}_{suit}.png";
-            return Image.FromFile(imagePath);
+
+            // Load the original image
+            Image originalImage = Image.FromFile(imagePath);
+
+            // Resize the image to the desired dimensions
+            return new Bitmap(originalImage, new Size(width, height));
         }
+
 
         private List<Card> DealCards(Deck deck)
         {
