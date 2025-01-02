@@ -30,6 +30,16 @@ namespace PokerMachine
             cards = cards.OrderBy(c => random.Next()).ToList();
         }
 
+        public Card Draw()
+        {
+            if (cards.Count == 0)
+                throw new InvalidOperationException("The deck is empty.");
+
+            Card card = cards[0];
+            cards.RemoveAt(0);
+            return card;
+        }
+
 
     }
 }
