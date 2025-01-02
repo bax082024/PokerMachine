@@ -295,6 +295,11 @@ namespace PokerMachine
             return hand.GroupBy(c => c.Rank).Any(g => g.Count() == 3);
         }
 
+        private bool IsTwoPair(List<Card> hand)
+        {
+            return hand.GroupBy(c => c.Rank).Count(g => g.Count() == 2) == 2;
+        }
+
 
 
 
