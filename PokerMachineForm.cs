@@ -123,7 +123,7 @@ namespace PokerMachine
                 isFirstTurn = true;
                 btnDeal.Text = "Deal";
                 Array.Fill(holdFlags, false);
-                ResetHoldButtons(); 
+                ResetHoldButtons();
             }
         }
 
@@ -157,7 +157,7 @@ namespace PokerMachine
             {
                 return rightPaytableData[handType] * betAmount;
             }
-            return 0; 
+            return 0;
         }
 
 
@@ -415,15 +415,20 @@ namespace PokerMachine
             }
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            balance = 100;
 
+            lblBalance.Text = $"Balance: ${balance}";
 
+            MessageBox.Show("Credits have been reset to $100!", "Reset Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-
-
-
-
-
+            isFirstTurn = true;
+            lblResult.Text = string.Empty;
+            Array.Fill(holdFlags, false);
+            ResetHoldButtons();
+            btnDeal.Text = "Deal";
+        }
 
     }
 

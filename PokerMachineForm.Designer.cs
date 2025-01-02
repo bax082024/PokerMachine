@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnReset = new Button();
             panelExtraRight = new Panel();
             panelRightPaytable = new Panel();
             panelExtraLeft = new Panel();
@@ -69,6 +70,7 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnReset);
             panel1.Controls.Add(panelExtraRight);
             panel1.Controls.Add(panelRightPaytable);
             panel1.Controls.Add(panelExtraLeft);
@@ -97,6 +99,20 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(935, 621);
             panel1.TabIndex = 0;
+            // 
+            // btnReset
+            // 
+            btnReset.Anchor = AnchorStyles.None;
+            btnReset.BackColor = Color.Silver;
+            btnReset.FlatStyle = FlatStyle.Popup;
+            btnReset.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReset.Location = new Point(861, 556);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(51, 26);
+            btnReset.TabIndex = 24;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
             // 
             // panelExtraRight
             // 
@@ -439,5 +455,6 @@
         private Panel panelLeftPaytable;
         private Panel panelExtraRight;
         private Panel panelRightPaytable;
+        private Button btnReset;
     }
 }
