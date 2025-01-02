@@ -228,6 +228,19 @@ namespace PokerMachine
             MessageBox.Show(paytableText, "Paytable", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
+        // Paytable
+
+        private bool IsRoyalFlush(List<Card> hand)
+        {
+            return IsStraight(hand) && IsFlush(hand) && hand.Any(c => c.Rank == "ace");
+        }
+
+
+
+
+
     }
+
+
 
 }
