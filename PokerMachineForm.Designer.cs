@@ -131,6 +131,7 @@
             btnHold5.TabIndex = 7;
             btnHold5.Text = "Hold";
             btnHold5.UseVisualStyleBackColor = false;
+            btnHold5.Click += btnHold5_Click;
             // 
             // btnHold4
             // 
@@ -143,6 +144,7 @@
             btnHold4.TabIndex = 6;
             btnHold4.Text = "Hold";
             btnHold4.UseVisualStyleBackColor = false;
+            btnHold4.Click += btnHold4_Click;
             // 
             // btnHold3
             // 
@@ -155,6 +157,7 @@
             btnHold3.TabIndex = 5;
             btnHold3.Text = "Hold";
             btnHold3.UseVisualStyleBackColor = false;
+            btnHold3.Click += btnHold3_Click;
             // 
             // btnHold2
             // 
@@ -167,6 +170,7 @@
             btnHold2.TabIndex = 4;
             btnHold2.Text = "Hold";
             btnHold2.UseVisualStyleBackColor = false;
+            btnHold2.Click += btnHold2_Click;
             // 
             // btnHold1
             // 
@@ -179,6 +183,7 @@
             btnHold1.TabIndex = 3;
             btnHold1.Text = "Hold";
             btnHold1.UseVisualStyleBackColor = false;
+            btnHold1.Click += btnHold1_Click;
             // 
             // btnDeal
             // 
@@ -209,7 +214,7 @@
             // 
             // pictureBox5
             // 
-            pictureBox5.BackColor = SystemColors.Info;
+            pictureBox5.BackColor = Color.LightGray;
             pictureBox5.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox5.BorderStyle = BorderStyle.FixedSingle;
             pictureBox5.Location = new Point(709, 17);
@@ -220,7 +225,7 @@
             // 
             // pictureBox4
             // 
-            pictureBox4.BackColor = SystemColors.Info;
+            pictureBox4.BackColor = Color.LightGray;
             pictureBox4.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox4.BorderStyle = BorderStyle.FixedSingle;
             pictureBox4.Location = new Point(536, 17);
@@ -231,7 +236,7 @@
             // 
             // pictureBox3
             // 
-            pictureBox3.BackColor = SystemColors.Info;
+            pictureBox3.BackColor = Color.LightGray;
             pictureBox3.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox3.BorderStyle = BorderStyle.FixedSingle;
             pictureBox3.Location = new Point(362, 17);
@@ -242,7 +247,7 @@
             // 
             // pictureBox2
             // 
-            pictureBox2.BackColor = SystemColors.Info;
+            pictureBox2.BackColor = Color.LightGray;
             pictureBox2.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox2.BorderStyle = BorderStyle.FixedSingle;
             pictureBox2.Location = new Point(188, 17);
@@ -253,7 +258,7 @@
             // 
             // pictureBox1
             // 
-            pictureBox1.BackColor = SystemColors.Info;
+            pictureBox1.BackColor = Color.LightGray;
             pictureBox1.BackgroundImageLayout = ImageLayout.Stretch;
             pictureBox1.BorderStyle = BorderStyle.FixedSingle;
             pictureBox1.Location = new Point(13, 17);

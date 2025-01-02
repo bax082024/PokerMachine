@@ -5,6 +5,8 @@ namespace PokerMachine
         private int balance = 100;
         private int currentBet = 10;
 
+        private bool[] holdFlags = new bool[5];
+
 
         public PokerMachineForm()
         {
@@ -39,12 +41,13 @@ namespace PokerMachine
 
         private void DisplayHand(List<Card> hand)
         {
-            pictureBox1.Image = LoadCardImage(hand[0].Rank, hand[0].Suit);
-            pictureBox2.Image = LoadCardImage(hand[1].Rank, hand[1].Suit);
-            pictureBox3.Image = LoadCardImage(hand[2].Rank, hand[2].Suit);
-            pictureBox4.Image = LoadCardImage(hand[3].Rank, hand[3].Suit);
-            pictureBox5.Image = LoadCardImage(hand[4].Rank, hand[4].Suit);
+            pictureBox1.Image = LoadCardImage(hand[0].Rank, hand[0].Suit, pictureBox1.Width, pictureBox1.Height);
+            pictureBox2.Image = LoadCardImage(hand[1].Rank, hand[1].Suit, pictureBox2.Width, pictureBox2.Height);
+            pictureBox3.Image = LoadCardImage(hand[2].Rank, hand[2].Suit, pictureBox3.Width, pictureBox3.Height);
+            pictureBox4.Image = LoadCardImage(hand[3].Rank, hand[3].Suit, pictureBox4.Width, pictureBox4.Height);
+            pictureBox5.Image = LoadCardImage(hand[4].Rank, hand[4].Suit, pictureBox5.Width, pictureBox5.Height);
         }
+
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
@@ -88,6 +91,34 @@ namespace PokerMachine
             return "No Winning Hand!";
         }
 
+        private void btnHold1_Click(object sender, EventArgs e)
+        {
+            holdFlags[0] = !holdFlags[0];
+            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+        }
 
+        private void btnHold2_Click(object sender, EventArgs e)
+        {
+            holdFlags[0] = !holdFlags[0];
+            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+        }
+
+        private void btnHold3_Click(object sender, EventArgs e)
+        {
+            holdFlags[0] = !holdFlags[0];
+            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+        }
+
+        private void btnHold4_Click(object sender, EventArgs e)
+        {
+            holdFlags[0] = !holdFlags[0];
+            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+        }
+
+        private void btnHold5_Click(object sender, EventArgs e)
+        {
+            holdFlags[0] = !holdFlags[0];
+            UpdateHoldButtonAppearance(btnHold1, holdFlags[0]);
+        }
     }
 }
