@@ -235,6 +235,11 @@ namespace PokerMachine
             return IsStraight(hand) && IsFlush(hand) && hand.Any(c => c.Rank == "ace");
         }
 
+        private bool IsStraightFlush(List<Card> hand)
+        {
+            return IsStraight(hand) && IsFlush(hand);
+        }
+
 
 
 
