@@ -33,7 +33,6 @@
     <None Remove="Images\Cards\6_diamond.png" />
     <None Remove="Images\Cards\6_heart.png" />
     <None Remove="Images\Cards\6_spades.png" />
-    <None Remove="Images\Cards\7.heart.png" />
     <None Remove="Images\Cards\7_club.png" />
     <None Remove="Images\Cards\7_diamond.png" />
     <None Remove="Images\Cards\7_spades.png" />
@@ -136,7 +135,7 @@
     <Content Include="Images\Cards\6_spades.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Images\Cards\7.heart.png">
+    <Content Include="Images\Cards\7_heart.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Cards\7_club.png">
