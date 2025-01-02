@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            lblCredits = new Label();
+            lblBalance = new Label();
             lblBet = new Label();
             btnBet = new Button();
             btnHold5 = new Button();
@@ -59,7 +59,7 @@
             // panel1
             // 
             panel1.BackColor = Color.Transparent;
-            panel1.Controls.Add(lblCredits);
+            panel1.Controls.Add(lblBalance);
             panel1.Controls.Add(lblBet);
             panel1.Controls.Add(btnBet);
             panel1.Controls.Add(btnHold5);
@@ -76,15 +76,15 @@
             panel1.Size = new Size(930, 621);
             panel1.TabIndex = 0;
             // 
-            // lblCredits
+            // lblBalance
             // 
-            lblCredits.AutoSize = true;
-            lblCredits.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblCredits.Location = new Point(419, 485);
-            lblCredits.Name = "lblCredits";
-            lblCredits.Size = new Size(84, 17);
-            lblCredits.TabIndex = 10;
-            lblCredits.Text = "Credits : 100";
+            lblBalance.AutoSize = true;
+            lblBalance.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            lblBalance.Location = new Point(419, 485);
+            lblBalance.Name = "lblBalance";
+            lblBalance.Size = new Size(84, 17);
+            lblBalance.TabIndex = 10;
+            lblBalance.Text = "Credits : 100";
             // 
             // lblBet
             // 
@@ -307,6 +307,6 @@
         private Button btnHold2;
         private Button btnBet;
         private Label lblBet;
-        private Label lblCredits;
+        private Label lblBalance;
     }
 }

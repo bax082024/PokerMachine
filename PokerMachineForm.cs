@@ -9,6 +9,9 @@ namespace PokerMachine
         public Form1()
         {
             InitializeComponent();
+
+            lblBalance.Text = $"Balance: ${balance}";
+            lblBet.Text = $"Bet: ${currentBet}";
         }
 
         private Image LoadCardImage(string rank, string suit)
