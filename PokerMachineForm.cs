@@ -135,10 +135,6 @@ namespace PokerMachine
         }
 
 
-
-
-
-
         private string EvaluateHand(List<Card> hand)
         {
             if (IsRoyalFlush(hand)) return "Royal Flush";
