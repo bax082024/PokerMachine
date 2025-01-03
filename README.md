@@ -18,3 +18,16 @@ Players can bet, deal cards, hold specific cards,and aim to get **Royal Flush**.
 ![Game](Images/game.png)
 
 ---
+
+## Installation
+
+1. **Clone the repository:**
+	- **https://github.com/bax082024/PokerMachine.git**
+2. Open the `.sln` file in **Visual Studio**.
+3. **Rebuild Project**
+4. Run and enjoy.
+
+---
+
+
+
