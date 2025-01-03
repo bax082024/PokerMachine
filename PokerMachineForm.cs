@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using WMPLib;
 
 namespace PokerMachine
 {
@@ -11,6 +12,7 @@ namespace PokerMachine
         private List<Card> currentHand = new List<Card>();
         private Deck deck = new Deck();
 
+        private WindowsMediaPlayer mediaPlayer = new WindowsMediaPlayer();
 
         private bool isFirstTurn = true;
 
@@ -73,6 +75,9 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
+            mediaPlayer.URL = "Sounds/deal.mp3";
+            mediaPlayer.controls.play();
+
             lblResult.Text = "Good luck!";
 
             if (isFirstTurn)
