@@ -29,5 +29,10 @@ Players can bet, deal cards, hold specific cards,and aim to get **Royal Flush**.
 
 ---
 
+## Contact 
 
+For questions or feedback, please contact:
+	- **bax082024@gmail.com**
+
+---
 
