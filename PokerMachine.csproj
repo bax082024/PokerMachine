@@ -60,6 +60,8 @@
     <None Remove="Images\Cards\q_diamond.png" />
     <None Remove="Images\Cards\q_heart.png" />
     <None Remove="Images\Cards\q_spades.png" />
+    <None Remove="Sounds\deal.mp3" />
+    <None Remove="Sounds\win.mp3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -229,6 +231,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Images\Cards\q_spades.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\deal.mp3">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Sounds\win.mp3">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
