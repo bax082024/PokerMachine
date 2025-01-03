@@ -115,6 +115,8 @@ namespace PokerMachine
 
                 if (payout > 0)
                 {
+                    mediaPlayer.URL = "Sounds/win.mp3";
+                    mediaPlayer.controls.play();
                     lblResult.Text = $"{result}! You won ${payout}.";
                 }
                 else
