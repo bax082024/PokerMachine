@@ -13,3 +13,8 @@ Players can bet, deal cards, hold specific cards,and aim to get **Royal Flush**.
 
 ---
 
+## Screenshot
+
+![Game](Images/game.png)
+
+---
