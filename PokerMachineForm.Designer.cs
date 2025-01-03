@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            btnReset = new Button();
             panelExtraRight = new Panel();
             panelRightPaytable = new Panel();
             panelExtraLeft = new Panel();
@@ -69,6 +70,7 @@
             // 
             panel1.BackColor = Color.Transparent;
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btnReset);
             panel1.Controls.Add(panelExtraRight);
             panel1.Controls.Add(panelRightPaytable);
             panel1.Controls.Add(panelExtraLeft);
@@ -98,12 +100,26 @@
             panel1.Size = new Size(935, 621);
             panel1.TabIndex = 0;
             // 
+            // btnReset
+            // 
+            btnReset.Anchor = AnchorStyles.None;
+            btnReset.BackColor = Color.Silver;
+            btnReset.FlatStyle = FlatStyle.Popup;
+            btnReset.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
+            btnReset.Location = new Point(861, 556);
+            btnReset.Name = "btnReset";
+            btnReset.Size = new Size(51, 26);
+            btnReset.TabIndex = 24;
+            btnReset.Text = "Reset";
+            btnReset.UseVisualStyleBackColor = false;
+            btnReset.Click += btnReset_Click;
+            // 
             // panelExtraRight
             // 
             panelExtraRight.Anchor = AnchorStyles.None;
             panelExtraRight.BackColor = Color.Tomato;
             panelExtraRight.BorderStyle = BorderStyle.Fixed3D;
-            panelExtraRight.Location = new Point(649, 65);
+            panelExtraRight.Location = new Point(690, 65);
             panelExtraRight.Name = "panelExtraRight";
             panelExtraRight.Size = new Size(89, 113);
             panelExtraRight.TabIndex = 23;
@@ -113,7 +129,7 @@
             panelRightPaytable.Anchor = AnchorStyles.None;
             panelRightPaytable.BackColor = Color.DarkBlue;
             panelRightPaytable.BorderStyle = BorderStyle.Fixed3D;
-            panelRightPaytable.Location = new Point(452, 65);
+            panelRightPaytable.Location = new Point(493, 65);
             panelRightPaytable.Name = "panelRightPaytable";
             panelRightPaytable.Size = new Size(200, 113);
             panelRightPaytable.TabIndex = 22;
@@ -123,7 +139,7 @@
             panelExtraLeft.Anchor = AnchorStyles.None;
             panelExtraLeft.BackColor = Color.Tomato;
             panelExtraLeft.BorderStyle = BorderStyle.Fixed3D;
-            panelExtraLeft.Location = new Point(298, 65);
+            panelExtraLeft.Location = new Point(339, 65);
             panelExtraLeft.Name = "panelExtraLeft";
             panelExtraLeft.Size = new Size(89, 113);
             panelExtraLeft.TabIndex = 21;
@@ -133,7 +149,7 @@
             panelLeftPaytable.Anchor = AnchorStyles.None;
             panelLeftPaytable.BackColor = Color.DarkBlue;
             panelLeftPaytable.BorderStyle = BorderStyle.Fixed3D;
-            panelLeftPaytable.Location = new Point(101, 65);
+            panelLeftPaytable.Location = new Point(142, 65);
             panelLeftPaytable.Name = "panelLeftPaytable";
             panelLeftPaytable.Size = new Size(200, 113);
             panelLeftPaytable.TabIndex = 20;
@@ -439,5 +455,6 @@
         private Panel panelLeftPaytable;
         private Panel panelExtraRight;
         private Panel panelRightPaytable;
+        private Button btnReset;
     }
 }

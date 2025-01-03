@@ -1,4 +1,5 @@
 using System.Drawing.Drawing2D;
+using WMPLib;
 
 namespace PokerMachine
 {
@@ -11,6 +12,7 @@ namespace PokerMachine
         private List<Card> currentHand = new List<Card>();
         private Deck deck = new Deck();
 
+        private WindowsMediaPlayer mediaPlayer = new WindowsMediaPlayer();
 
         private bool isFirstTurn = true;
 
@@ -32,8 +34,6 @@ namespace PokerMachine
         };
 
 
-
-
         public PokerMachineForm()
         {
             InitializeComponent();
@@ -45,13 +45,10 @@ namespace PokerMachine
 
         private Image LoadCardImage(string rank, string suit, int width, int height)
         {
-            // Construct the image path
             string imagePath = $"Images/Cards/{rank}_{suit}.png";
 
-            // Load the original image
             Image originalImage = Image.FromFile(imagePath);
 
-            // Resize the image to the desired dimensions
             return new Bitmap(originalImage, new Size(width, height));
         }
 
@@ -78,18 +75,19 @@ namespace PokerMachine
 
         private void btnDeal_Click(object sender, EventArgs e)
         {
+            mediaPlayer.URL = "Sounds/deal.mp3";
+            mediaPlayer.controls.play();
+
             lblResult.Text = "Good luck!";
 
             if (isFirstTurn)
             {
-                // Check if the player has enough credits to place the bet
                 if (currentBet > balance)
                 {
                     MessageBox.Show("You don't have enough credits to place this bet.", "Insufficient Credits", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return; // Prevent further execution if the bet is too high
+                    return;
                 }
 
-                // First Turn: Deduct credits and deal cards
                 balance -= currentBet;
                 lblBalance.Text = $"Balance: ${balance}";
 
@@ -99,11 +97,10 @@ namespace PokerMachine
                 DisplayHand(currentHand);
 
                 isFirstTurn = false;
-                btnDeal.Text = "Draw"; // Change button text to "Draw"
+                btnDeal.Text = "Draw";
             }
             else
             {
-                // Second Turn: Replace unheld cards
                 for (int i = 0; i < currentHand.Count; i++)
                 {
                     if (!holdFlags[i])
@@ -113,13 +110,13 @@ namespace PokerMachine
                 }
                 DisplayHand(currentHand);
 
-                // Evaluate the hand and calculate the payout
                 string result = EvaluateHand(currentHand);
                 int payout = CalculatePayout(result, currentBet);
 
-                // Update lblResult to display hand type and payout
                 if (payout > 0)
                 {
+                    mediaPlayer.URL = "Sounds/win.mp3";
+                    mediaPlayer.controls.play();
                     lblResult.Text = $"{result}! You won ${payout}.";
                 }
                 else
@@ -127,26 +124,19 @@ namespace PokerMachine
                     lblResult.Text = $"{result}. Better luck next time!";
                 }
 
-                // Update balance with winnings
                 balance += payout;
                 lblBalance.Text = $"Balance: ${balance}";
 
-                // Reset for the next round
                 isFirstTurn = true;
-                btnDeal.Text = "Deal"; // Reset button text
-                Array.Fill(holdFlags, false); // Reset hold flags
-                ResetHoldButtons(); // Reset button appearance
+                btnDeal.Text = "Deal";
+                Array.Fill(holdFlags, false);
+                ResetHoldButtons();
             }
         }
 
 
-
-
-
-
         private string EvaluateHand(List<Card> hand)
         {
-            // Example logic to determine hand type
             if (IsRoyalFlush(hand)) return "Royal Flush";
             if (IsStraightFlush(hand)) return "Straight Flush";
             if (IsFourOfAKind(hand)) return "Four of a Kind";
@@ -170,11 +160,8 @@ namespace PokerMachine
             {
                 return rightPaytableData[handType] * betAmount;
             }
-            return 0; // No payout for losing hands
+            return 0;
         }
-
-
-
 
 
         private void btnHold1_Click(object sender, EventArgs e)
@@ -210,18 +197,16 @@ namespace PokerMachine
                 return;
             }
 
-            // Toggle the hold state
             holdFlags[index] = !holdFlags[index];
 
-            // Update the button appearance
             if (holdFlags[index])
             {
-                button.BackColor = Color.LightGreen; // Indicate held state
+                button.BackColor = Color.LightGreen;
                 button.Text = "Held";
             }
             else
             {
-                button.BackColor = SystemColors.Control; // Reset to default
+                button.BackColor = SystemColors.Control;
                 button.Text = "Hold";
             }
         }
@@ -232,7 +217,7 @@ namespace PokerMachine
         {
             if (isHeld)
             {
-                button.BackColor = Color.LightGreen; // Highlight if held
+                button.BackColor = Color.LightGreen;
                 button.Text = "Held";
             }
             else
@@ -256,22 +241,18 @@ namespace PokerMachine
         {
             string paytableText = "Paytable:\n\n";
 
-            // Iterate through the left paytable
             foreach (var entry in leftPaytableData)
             {
                 paytableText += $"{entry.Key}: {entry.Value}x\n";
             }
 
-            // Add a divider between the two paytables
             paytableText += "\n";
 
-            // Iterate through the right paytable
             foreach (var entry in rightPaytableData)
             {
                 paytableText += $"{entry.Key}: {entry.Value}x\n";
             }
 
-            // Display the paytable in a message box
             MessageBox.Show(paytableText, "Paytable", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -379,17 +360,14 @@ namespace PokerMachine
 
         private void PopulatePaytablePanels()
         {
-            // Clear existing controls in all panels
             panelLeftPaytable.Controls.Clear();
             panelExtraLeft.Controls.Clear();
             panelRightPaytable.Controls.Clear();
             panelExtraRight.Controls.Clear();
 
-            // Populate the left paytable
             int row = 0;
             foreach (var entry in leftPaytableData)
             {
-                // Add Hand Type (left panel)
                 var handTypeLabel = new Label
                 {
                     Text = entry.Key,
@@ -400,7 +378,6 @@ namespace PokerMachine
                 };
                 panelLeftPaytable.Controls.Add(handTypeLabel);
 
-                // Add Payout (left extra panel)
                 var payoutLabel = new Label
                 {
                     Text = entry.Value.ToString(),
@@ -414,11 +391,9 @@ namespace PokerMachine
                 row++;
             }
 
-            // Populate the right paytable
             row = 0;
             foreach (var entry in rightPaytableData)
             {
-                // Add Hand Type (right panel)
                 var handTypeLabel = new Label
                 {
                     Text = entry.Key,
@@ -429,7 +404,6 @@ namespace PokerMachine
                 };
                 panelRightPaytable.Controls.Add(handTypeLabel);
 
-                // Add Payout (right extra panel)
                 var payoutLabel = new Label
                 {
                     Text = entry.Value.ToString(),
@@ -444,15 +418,20 @@ namespace PokerMachine
             }
         }
 
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            balance = 100;
 
+            lblBalance.Text = $"Balance: ${balance}";
 
+            MessageBox.Show("Credits have been reset to $100!", "Reset Successful", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-
-
-
-
-
-
+            isFirstTurn = true;
+            lblResult.Text = string.Empty;
+            Array.Fill(holdFlags, false);
+            ResetHoldButtons();
+            btnDeal.Text = "Deal";
+        }
 
     }
 
