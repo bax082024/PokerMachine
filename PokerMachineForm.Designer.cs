@@ -299,7 +299,7 @@
             lblBalance.Anchor = AnchorStyles.None;
             lblBalance.AutoSize = true;
             lblBalance.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBalance.ForeColor = Color.DarkGray;
+            lblBalance.ForeColor = Color.Khaki;
             lblBalance.Location = new Point(418, 484);
             lblBalance.Name = "lblBalance";
             lblBalance.Size = new Size(84, 17);
@@ -325,8 +325,8 @@
             lblBet.Anchor = AnchorStyles.None;
             lblBet.AutoSize = true;
             lblBet.Font = new Font("Segoe UI", 9.75F, FontStyle.Bold, GraphicsUnit.Point, 0);
-            lblBet.ForeColor = Color.DarkGray;
-            lblBet.Location = new Point(214, 505);
+            lblBet.ForeColor = Color.Khaki;
+            lblBet.Location = new Point(214, 500);
             lblBet.Name = "lblBet";
             lblBet.Size = new Size(40, 17);
             lblBet.TabIndex = 9;
